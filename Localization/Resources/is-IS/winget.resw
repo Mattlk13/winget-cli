@@ -130,6 +130,10 @@
     <value>Eftirfarandi skipanir eru tiltækar:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Tiltækt</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Eftirfarandi valkostir eru tiltækir:</value>
   </data>
@@ -294,8 +298,9 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   <data name="InvalidNameError" xml:space="preserve">
     <value>Heiti frumbreytu þekktist ekki fyrir núverandi skipun</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Tungumál sem á að setja upp (ef stutt)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Landsstaðall sem á að notast við (BCP47 snið)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Leyfissamningur</value>
@@ -303,6 +308,13 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   <data name="Links" xml:space="preserve">
     <value>Tenglar</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>lista-skipun birtir pakka sem settir hafa verið upp á kerfinu, sem og hvort uppfærsla sé í boði. Hægt er að útvega viðbótar valkosti til að sía úttakið, líkt og search-skipunina.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Birta uppsetta pakka</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Staðsetning sett upp á (ef stutt)</value>
@@ -341,11 +353,11 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Ekki tókst að reikna út tætigildi MSIX-undirritunar.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Ekki tókst að setja upp Microsoft Store-pakka þar sem tiltekið forrit er útilokað af reglu</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Ekki tókst að setja upp eða uppfæra Microsoft Store-pakka þar sem tiltekið forrit er útilokað af reglu</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Ekki tókst að setja upp Microsoft Store-pakka. Villukóði:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Ekki tókst að setja upp eða uppfæra Microsoft Store-pakka. Villukóði:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Ekki tókst að sannprófa/biðja um kaup á pakka: netvilla</value>
@@ -359,11 +371,14 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Sannprófun/beiðni um kaup á pakka tókst</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
     <value>Ekki tókst að setja upp Microsoft Store-pakka vegna þess að Microsoft Store-biðlarinn er útilokaður af reglu</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Sannprófar/biður um kaup á pakka...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Margir pakkar pössuðu við inntaksskilyrði. Vinsamlegast þrengdu inntakið.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Margir pakkar pössuðu við innslegin skilyrði. Þrengdu skilyrðin.</value>
@@ -372,10 +387,13 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
     <value>Sía niðurstöður eftir heiti</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Engin uppsetningarforrit eru nothæf fyrir núverandi kerfi.</value>
+    <value>Engin viðeigandi uppsetningarforrit fundust; frekari upplýsingar er að finna í annálum.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Engir eiginleikar á tilraunastigi eru tiltækir eins og er. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Enginn pakki samsvaraði inntaksskilyrðum.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Enginn pakki samsvaraði innslegnum skilyrðum.</value>
@@ -420,7 +438,7 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
     <value>Framvinduskjár sem sjálfgefinn litur</value>
   </data>
   <data name="SearchCommandLongDescription" xml:space="preserve">
-    <value>Leitar eftir pökkum í skilgreindum uppruna.</value>
+    <value>Leitar eftir pökkum frá skilgreindum uppruna.</value>
   </data>
   <data name="SearchCommandShortDescription" xml:space="preserve">
     <value>Finna og sýna grunnupplýsingar pakka</value>
@@ -460,7 +478,7 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
     <value>Rás</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Sýnir upplýsingar um tiltekinn pakka. Fyrirspurnin verður sjálfgefið að samsvara auðkenni, heiti eða viðurnefni pakkans án þess að greina á milli há- og lágstafa. Hægt er að nota aðra reiti með því að senda viðeigandi valkosti þeirra.</value>
+    <value>Sýnir upplýsingar um tiltekinn pakka. Fyrirspurnin verður sjálfgefið að samsvara auðkenni, heiti eða viðurnefni pakkans. Hægt er að nota aðra reiti með því að senda viðeigandi valkosti þeirra.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Sýnir upplýsingar um pakka</value>
@@ -520,7 +538,7 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Svæði</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Heiti</value>
@@ -542,7 +560,7 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>aldrei</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Gildi</value>
@@ -550,6 +568,14 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Heiti upprunans</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Ekki tókst að opna uppruna; reyndu 'source reset' skipunina ef vandamálið leysist ekki.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Ekki tókst að opna fyrirframskilgreindan uppruna; Vinsamlegast tilkynntu til winget maintainers.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Fjarlægir alla uppruna...</value>
@@ -619,13 +645,26 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
     <value>Frumbreyta gefin upp oftar en heimilt er</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Fleiri en ein frumbreyta fyrir uppsetningarhegðun gefin upp</value>
+    <value>Fleiri en ein uppsetningarhegðun fyrir frumbreytu gefin upp</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Óvænt villa kom upp þegar verið var að framkvæma skipunina:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Óþekkt skipun</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Uppfærðu alla uppsetta pakka í nýjustu ef þeir eru tiltækir</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Engin viðeigandi uppfærsla fannst.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Uppfærðu valinn pakka, sem annað hvort fannst með því að leita að uppsettum pakkalistum eða beint úr farmskrá. Fyrirspurnin verður sjálfgefið að samsvara auðkenni, heiti eða viðurnefni pakkans án þess að greina á milli há- og lágstafa. Hægt er að nota aðra reiti með því að senda viðeigandi valkosti.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Uppfærir pakkann</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>notkun</value>
@@ -654,5 +693,232 @@ Hægt er að grinnstilla þá í stillingaskránni „winget settings“.</value
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Beðið var um gildið sem gefið var upp fyrir lok</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Engin útgáfa fannst sem samsvarar:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Engar heimildir samsvara gefnu gildi:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Skilgreindir upprunar eru:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Engar heimildir skilgreindar; bættu við einni með 'source add' eða endurstilltu sjálfgefnar stillingar með 'source reset'</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Fundið</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Slóðin er skráasafn:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Skrá er ekki til:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Boðið er upp á bæði staðbundna skrá og arg leitarfyrirspurnir</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Annálar</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Regla útilokar uppsetningarforritið</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Uppsetningarforritið stóðst ekki öryggisathugun</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Vírusvarnarvara tilkynnir uppsetningarforritinu um sýkingu</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Mistókst að uppfæra upprunann:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Fjarlægir valinn pakka, sem annað hvort fannst með því að leita að uppsettum pakkalistum eða beint úr farmskrá. Fyrirspurnin verður sjálfgefið að samsvara auðkenni, heiti eða viðurnefni pakkans án þess að greina á milli há- og lágstafa. Hægt er að nota aðra reiti með því að senda viðeigandi valkosti.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Fjarlægir pakkann</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Byrjar fjarlægingu á pakka...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Fjarlægt</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget finnur ekki skipun um að fjarlægja þennan pakka. Hafðu samband við útgefanda pakkans til að fá aðstoð.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Hætt við fjarlægingu</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Fjarlæging mistókst með lokunarkóða:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Flytur út lista yfir uppsetta pakka</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Setur upp alla pakka sem gefnir eru upp í skrá.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Setur upp alla pakkana í skrá.</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Skrá þar sem skrifa á niðurstöðuna</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Skrá sem lýsir pökkunum til að setja upp</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Flytja út pakka frá tilgreindum uppruna</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Skrifar lista yfir uppsetta pakka í skrá. Hægt er að setja pakkana upp með import skipuninni.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Ekki tókst að setja upp einn eða fleiri innflutta pakka</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Pakkinn fannst ekki fyrir innflutning:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Uppruni sem þarf fyrir að flytja inn er ekki uppsettur:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Uppsettur pakki er ekki tiltækur úr neinum uppruna:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Uppsett útgáfa af pakka er ekki tiltæk úr neinum uppruna:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Engir pakkar fundust í innfluttu skránni</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON-skrá er ekki gild</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Pakki er þegar uppsettur:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Hunsa ótiltæka pakka</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Taka útgáfur pakka með í framleidda skrá</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Hunsa útgáfur pakka úr innfluttri skrá</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Slóð er ekki til:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON-skráin tilgreinir ekki viðurkennd skemu.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Velja uppsetningarumfang (notandi eða vél)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Gildið sem var sett upp fyrir `%1` frumbreytuna er ógilt; gild gildi eru</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Þessi aðgerð er óvirk vegna hópreglu</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Virkja fleiri uppruna fyrir Windows-uppsetningarforrit</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Virkja leyfða uppruna Windows-uppsetningarforrits</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Virkja sjálfgefinn uppruna fyrir Windows-uppsetningarforrit</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Virkja tilraunaeiginleika Windows-uppsetningarforrits</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Virkja Microsoft Store-uppruna Windows-uppsetningarforrits</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Virkja stillingar Windows-pakkastjóra</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Virkja Windows-pakkastjóra</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Stilla millibil sjálfvirkrar uppfærslu uppruna Windows-pakkastjóra í mínútum</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Óvirk</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Virk</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Hópregla</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Staða</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Virkja staðbundnar upplýsingaskrár Windows-uppsetningarforrits</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Svið:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Ógilt snið reits.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Ógilt gildi reits.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Ógild stilling frá hópreglu.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Hlaðnar stillingar úr skrá öryggisafrit.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Villa við að þátta skrá:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Virði:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Eftirfarandi tilraunaaðgerðir eru í vinnslu.
+Grunnstilling er óvirk vegna hópreglu.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Tætigildi uppsetningarforrits passar ekki.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Leyfa hnekkingu tætigildis Windows-uppsetningarforrits</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Flytja út núverandi uppruna sem JSON fyrir hópreglu.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Flytja út núverandi uppruna</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Viðbótaruppruni</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Leyfður uppruni</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Gildið sem var sett upp fyrir `%1` frumbreytuna er ógilt</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

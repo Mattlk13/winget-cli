@@ -130,6 +130,10 @@
     <value>pandangan berikut tersedia:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Tersedia</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>perkaitan berikut tersedia:</value>
   </data>
@@ -294,8 +298,9 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   <data name="InvalidNameError" xml:space="preserve">
     <value>nama argumen tidak dikenali untuk perintah semasa</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Bahasa untuk dipasang (jika disokong)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Tempatan untuk digunakan (format BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Perjanjian Lesen</value>
@@ -303,6 +308,13 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   <data name="Links" xml:space="preserve">
     <value>Pautan</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>list perintah memaparkan pakej yang dipasang pada sistem, juga sama ada kemas kini tersedia. Pilihan tambahan boleh disediakan untuk menapis output, sama seperti perintah search.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Papar pakej terpasang</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Lokasi untuk dipasang (jika disokong)</value>
@@ -341,10 +353,10 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Gagal mengira cincangan tandatangan MSIX.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Gagal memasang pakej Microsoft Store kerana aplikasi yang khusus disekat oleh dasar</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Gagal memasang atau mengemas kini pakej Microsoft Store kerana aplikasi tertentu disekat oleh polisi</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
     <value>Gagal memasang pakej Microsoft Store. Kod ralat:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
@@ -359,11 +371,14 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Menentusahkan/Meminta kejayaan pemerolehan pakej</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Gagal memasang pakej Microsoft Store kerana klien Microsoft Store disekat oleh dasar</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Gagal memasang pakej Microsoft Store kerana klien Microsoft Store disekat oleh polisi</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Menentusahkan/Meminta pemerolehan pakej...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Berbilang pakej yang sepadan dengan kriteria input ditemui. Sila perhalusi input.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Berbilang pakej ditemui yang sepadan dengan kriteria input. Sila perhalusi input.</value>
@@ -372,10 +387,13 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
     <value>Tapis hasil mengikut nama</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Tiada pemasang yang berkenaan untuk sistem semasa.</value>
+    <value>Tidak ada pemasang yang berkenaan; lihat log untuk maklumat lebih lanjut.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Pada masa ini tiada ciri eksperimen yang tersedia. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Tiada pakej ditemui yang sepadan dengan kriteria input.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Tiada pakej ditemui yang sepadan dengan kriteria input.</value>
@@ -460,7 +478,7 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
     <value>Saluran</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Tunjukkan maklumat tentang pakej tertentu. Secara lalai, pertanyaan mesti sepadan dengan ID, nama atau laluan pautan bagi pakej tanpa sensitif huruf. Medan lain boleh digunakan dengan lulus opsyen yang sesuai.</value>
+    <value>Menunjukkan maklumat tentang pakej tertentu. Secara lalai, pertanyaan mesti sepadan dengan ID, nama atau moniker pakej. Medan lain boleh digunakan dengan memberikan pilihan yang sesuai.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Menunjukkan maklumat tentang pakej</value>
@@ -520,7 +538,7 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Medan</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Nama</value>
@@ -542,7 +560,7 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>tidak pernah</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Nilai</value>
@@ -550,6 +568,14 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Nama sumber</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Gagal membuka sumber; cuba perintah 'source reset' Jika masalah berlanjutan.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Gagal membuka sumber yang dipratentukan; sila laporkan kepada penyenggara winget.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Mengalih keluar semua sumber...</value>
@@ -619,13 +645,26 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
     <value>Argumen menyediakan lebih banyak masa daripada yang diizinkan</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>lebih daripada satu argumen kelakuan yang disediakan</value>
+    <value>Lebih daripada satu pelaksanaan argumen tingkah laku disediakan</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Ralat tidak dijangka telah berlaku semasa melaksanakan perintah:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Perintah tidak dikenali</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Kemas kini semua pakej yang dipasang kepada versi yang terkini jika tersedia</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Tiada kemas kini yang berkaitan ditemui.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Menaik taraf pakej yang dipilih, sama ada ditemui dengan mencari senarai pakej yang dipasang atau terus daripada manifes. Secara lalai, pertanyaan mesti sepadan dengan id, nama atau laluan pautan pakej secara tidak sensitif. Medan lain boleh digunakan dengan melepasi opsyen yang sesuai.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Menaik taraf pakej yang diberikan</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>penggunaan</value>
@@ -654,5 +693,232 @@ Ia boleh dikonfigurasikan menerusi fail seting 'winget settings'.</value>
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Nilai yang diberikan sebelum penyelesaian sedang diminta</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Tiada versi bersesuaian ditemui:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Tiada sumber yang sepadan dengan nilai yang diberikan:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Sumber yang dikonfigurasi ialah:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Tiada sumber ditentukan; tambah satu dengan 'source add' atau tetap semula kepada lalai dengan 'source reset'</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Dijumpai</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Laluan ialah Direktori:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Fail tidak wujud:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Kedua-dua manifes tempatan dan pertanyaan carian yang sama dengan ARG disediakan</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Log</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Pemasang ini disekat oleh dasar</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Pemasang gagal melepasi semakan keselamatan</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Produk anti virus melaporkan jangkitan dalam pemasang</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Gagal mengemas kini sumber:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Memadam pakej yang dipilih, sama ada ditemui dengan mencari di senarai pakej yang dipasang atau terus daripada manifes. Secara lalai, pertanyaan mesti menepati ID, nama atau moniker pakej tanpa sensitif huruf. Medan lain boleh digunakan dengan lulus pilihan yang sesuai.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Memasang pakej yang diberikan</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Memulakan nyahpasang pakej...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Berjaya dinyahpasang</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget tidak dapat mencari perintah nyahpasang untuk pakej ini. Sila hubungi penerbit pakej untuk sokongan.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Nyahpasang dibatalkan</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Nyahpasang gagal dengan kod keluar:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Eksport senarai pakej yang dipasang</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Pasang semua pakej yang disenaraikan dalam fail.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Pasang semua pakej dalam fail.</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Fail yang mana keputusan akan ditulis</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Fail menerangkan pakej untuk dipasang</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Pakej eksport daripada sumber yang ditentukan</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Menulis senarai pakej yang dipasang kepada fail. Kemudian, pakej boleh dipasang dengan perintah import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Satu atau lebih banyak pakej yang diimport gagal dipasang</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Pakej tidak ditemui untuk Import:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Sumber yang diperlukan untuk import tidak dipasang:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Versi pakej yang dipasang tidak tersedia daripada mana-mana sumber:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Versi pakej yang dipasang tidak tersedia daripada mana-mana sumber:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Tiada pakej ditemui dalam fail import</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>Fail JSON tidak sah</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Pakej telah dipasang:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Abaikan pakej yang tidak tersedia</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Sertakan versi pakej dalam fail yang dihasilkan</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Abaikan versi pakej daripada fail import</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Laluan tidak wujud:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>Fail JSON tidak menentukan skema yang dikenali.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Pilih pemasangan skop (pengguna atau mesin)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Nilai yang disediakan untuk argumen '%1' adalah tidak sah; nilai yang sah adalah</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Operasi ini dinyahdayakan oleh Dasar Kumpulan</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Mendayakan Sumber Pemasang Aplikasi Windows Tambahan</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Dayakan Sumber Yang Dibenarkan Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Dayakan Sumber Lalai Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Dayakan Ciri Eksperimen Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Dayakan Sumber Microsoft Store Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Dayakan Tetapan Pengurus Pakej Windows</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Dayakan Pengurus Pakej Windows</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Tetapkan Selang Kemas kini Auto Sumber Pengurus Pakej Windows Dalam Minit</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Dinyahdayakan</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Didayakan</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Dasar Kumpulan</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Negeri</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Dayakan Fail Manifes Tempatan Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Ruang:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Format ruang tidak sah.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Nilai ruang tidak sah.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Tetapan tidak sah daripada Dasar Kumpulan.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Tetapan dimuatkan daripada fail sandaran.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Ralat menguraikan fail:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Nilai:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Ciri-ciri eksperimen yang berikut sedang dijalankan.
+Konfigurasi dinyahdayakan disebabkan Dasar Kumpulan.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Pemasang hash tidak sepadan.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Dayakan Penggantian Hash Pemasang Aplikasi Windows</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Eksport sumber semasa sebagai JSON untuk Dasar Kumpulan.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Eksport sumber semasa</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Sumber tambahan</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Sumber yang dibenarkan</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Nilai yang disediakan untuk argumen '%1' tidak sah</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

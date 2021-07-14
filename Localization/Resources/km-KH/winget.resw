@@ -130,6 +130,10 @@
     <value>ពាក្យបញ្ជាខាងក្រោមអាចប្រើបាន៖</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>ដែលអាចប្រើបាន</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>មានជម្រើសដូចខាងក្រោម៖</value>
   </data>
@@ -294,8 +298,9 @@
   <data name="InvalidNameError" xml:space="preserve">
     <value>ឈ្មោះអាគុយម៉ង់មិនត្រូវបានទទួលស្គាល់សម្រាប់ពាក្យបញ្ជាបច្ចុប្បន្នទេ</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>ភាសា​ត្រូវ​ដំឡើង (ប្រសិន​បើ​បានគាំទ្រ)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>តំបន់ ដើម្បីប្រើប្រាស់ (សូមប្រើទ្រង់ទ្រាយ BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>កិច្ចព្រមព្រៀង​អាជ្ញាប័ណ្ណ</value>
@@ -303,6 +308,13 @@
   <data name="Links" xml:space="preserve">
     <value>តំណភ្ជាប់</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>ពាក្យបញ្ជា list បង្ហាញកញ្ចប់ដែលបានដំឡើងនៅលើប្រព័ន្ធក៏ដូចជាថាតើមានបច្ចុប្បន្នភាពទេ។ ជម្រើសបន្ថែមអាចត្រូវបានផ្តល់ជូនដើម្បីច្រោះលទ្ធផលដូចជាពាក្យបញ្ជា​ search។</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>បង្ហាញកញ្ចប់ដែលបានដំឡើង</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>ទីតាំង​ត្រូវ​ដំឡើង​ (ប្រសិនបើ​បាន​គាំទ្រ)</value>
@@ -341,11 +353,11 @@
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>មិន​អាចគណនា​ហាស​ហត្ថលេខា MSIX បាន​ទេ។</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>បាន​បរាជ័យ​ក្នុងការដំឡើង​កញ្ចប់ Microsoft Store ពីព្រោះ​កម្មវិធីជាក់លាក់​ត្រូវ​ប្លុក​ដោយ​គោលនយោបាយ</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>បានបរាជ័យក្នុងការដំឡើង ឬ​អាប់ដេត​កញ្ចប់ Microsoft Store ពីព្រោះកម្មវិធីជាក់លាក់ត្រូវ​ទប់ស្កាត់​ដោយគោលនយោបាយ</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>បានបរាជ័យ​ក្នុងការដំឡើងកញ្ចប់ Microsoft Store។ កូដកំហុស៖</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>បាន​បរាជ័យ​ក្នុងការ​ដំឡើង ឬ​អាប់ដេត​កញ្ចប់ Microsoft Store។ កូដ​កំហុស៖</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>ការផ្ទៀងផ្ទាត់/ការស្នើសុំ​ការទទួលបានកញ្ចប់​បានបរាជ័យ៖ កំហុសបណ្ដាញ</value>
@@ -359,11 +371,14 @@
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>ការផ្ទៀងផ្ទាត់/ការស្នើសុំការទទួលបាន​កញ្ចប់ទទួលបានជោគជ័យ</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>បានបរាជ័យ​ក្នុងការដំឡើងកញ្ចប់ Microsoft Store ពីព្រោះ​ម៉ាស៊ីនកូន​ Microsoft Store ត្រូវបានប្លុកដោយគោលនយោបាយ</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>បានបរាជ័យក្នុងការដំឡើង ឬ​អាប់ដេត​កញ្ចប់ Microsoft Store ពីព្រោះម៉ាស៊ីន​កូន Microsoft Store ត្រូវបានប្លុកដោយគោលនយោបាយ</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>កំពុងផ្ទៀងផ្ទាត់/កំពុងស្នើសុំការទទួលបាន​កញ្ចប់...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>កញ្ចប់ដែលបានដំឡើងច្រើនបានរកឃើញលក្ខណៈវិនិច្ឆ័យបញ្ចូលដែលត្រូវគ្នា។ សូមសម្រាំងព័ត៌មានបញ្ចូល។</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>កញ្ចប់ច្រើនបានរកឃើញលក្ខណៈវិនិច្ឆ័យបញ្ចូលដែលត្រូវគ្នា។ សូមសម្រាំងព័ត៌មានបញ្ចូល។</value>
@@ -372,10 +387,13 @@
     <value>លទ្ធផល​តម្រង​តាម​ឈ្មោះ</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>គ្មាន​កម្មវិធី​ដំឡើង​ដែល​អាច​អនុវត្ត​បាន​ចំពោះ​ប្រព័ន្ធ​បច្ចុប្បន្ន​ទេ។</value>
+    <value>រកមិនឃើញកម្មវិធីដំឡើងដែលអាចប្រើបានទេ។ សូមមើលកំណត់ហេតុ ដើម្បីទទួលបានព័ត៌មានលម្អិតបន្ថែម។</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
-    <value>បច្ចុប្បន្ននេះមិនមានលក្ខណៈពិសោធន៍សាកល្បងទេ។ </value>
+    <value>បច្ចុប្បន្ននេះ មិនមាន​​មុខងារ​​ពិសោធន៍​ទេ។ </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>រកមិនឃើញកញ្ចប់ដែលបានដំឡើងត្រូវនឹងលក្ខខណ្ឌបញ្ចូលដែលត្រូវគ្នា។</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>រកមិនឃើញកញ្ចប់ដែលត្រូវនឹងលក្ខខណ្ឌបញ្ចូលដែលត្រូវគ្នា។</value>
@@ -420,7 +438,7 @@
     <value>វឌ្ឍនភាព​បង្ហាញ​ជា​ពណ៌​លំនាំដើម</value>
   </data>
   <data name="SearchCommandLongDescription" xml:space="preserve">
-    <value>ស្វែងរក​កញ្ចប់​ពី​ប្រភពដែលបានរៀបចំ។</value>
+    <value>ស្វែងរកកញ្ចប់ពីប្រភពដែលបានដំឡើង។</value>
   </data>
   <data name="SearchCommandShortDescription" xml:space="preserve">
     <value>រកមើល និង​បង្ហាញ​ព័ត៌មានមូលដ្ឋាននៃកញ្ចប់</value>
@@ -460,10 +478,10 @@
     <value>កាណាល់</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>បង្ហាញ​ព័ត៌មាន​អំពីកញ្ចប់ជាក់លាក់។ តាមលំនាំដើម​ សំណើ​ត្រូវតែ​ប្រកាន់អក្សរ​តូចធំ​ដូចនឹង id ឈ្មោះ ឬឈ្មោះក្រៅរបស់​កញ្ចប់ដែរ។ កន្លែង​បញ្ចូល​ដទៃទៀត​អាច​ត្រូវបានប្រើ​ដោយ​ផ្ដល់​នូវជម្រើស​សមស្របរបស់ពួកវា។</value>
+    <value>បង្ហាញ​ព័ត៌មាន​អំពី​កញ្ចប់​ជាក់លាក់។ តាម​លំនាំដើម សំណួរ​ត្រូវ​តែ​ប្រកាន់អក្សរ​តូ​ចធំ លេខ​សម្គាល់ ឈ្មោះ ឬ​ឈ្មោះ​ក្រៅ​របស់​កញ្ចប់។ កន្លែង​បញ្ចូល​ផ្សេង​ទៀត​អាច​ត្រូវ​បានប្រើ​ដោយ​បញ្ជូន​ជម្រើស​សមស្រប​របស់​ពួកវា។</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>បង្ហាញ​ព័ត៌មាន​អំពីកញ្ចប់</value>
+    <value>បង្ហាញព័ត៌មានអំពីកញ្ចប់</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>កំណែ</value>
@@ -520,7 +538,7 @@
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>កន្លែងបញ្ចូល</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>ឈ្មោះ</value>
@@ -542,7 +560,7 @@
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>មិនដែល</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>តម្លៃ</value>
@@ -550,6 +568,14 @@
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>ឈ្មោះ​ប្រភព</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>បរាជ័យក្នុងការបើកប្រភព; សាកល្បងពាក្យបញ្ជា ‘source reset’ ប្រសិនបើនៅតែមានបញ្ហា។</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>បរាជ័យក្នុងការបើកប្រភពដែលបានកំណត់ជាមុន; សូមរាយការណ៍ទៅអ្នកថែរក្សា winget។</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>ដកប្រភពទាំងអស់ចេញ...</value>
@@ -619,13 +645,26 @@
     <value>អាគុយម៉ង់បានផ្តល់ពេលវេលាច្រើនជាងការអនុញ្ញាត</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>បានផ្តល់អាគុយម៉ង់ឥរិយាបទដំឡើងច្រើនជាងមួយ</value>
+    <value>អាគុយម៉ង់ការប្រតិបត្តិច្រើនជាងមួយបានផ្តល់ឱ្យ</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>កំហុស​ដែល​មិន​រំពឹង​ទុកមួយ​បានកើត​ឡើង​នៅ​ពេល​ប្រតិបត្តិពាក្យ​បញ្ជា៖</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>ពាក្យបញ្ជាដែលមិនស្គាល់</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>អាប់ដេតកញ្ចប់ដែលបានដំឡើងទាំងអស់ទៅកំណែចុងក្រោយបំផុត ប្រសិនបើមាន</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>រកមិនឃើញបច្ចុប្បន្នភាពដែលអាចអនុវត្តបានទេ។</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>ធ្វើបច្ចុប្បន្នភាពកញ្ចប់ដែលបានជ្រើស រកឃើញដោយស្វែងរកបញ្ជីកញ្ចប់ដែលបានដំឡើង ឬដោយផ្ទាល់ពីមេនីហ្វេស។ តាមលំនាំដើមសំណួរត្រូវតែស៊ីគ្នានឹងលេខសម្គាល់ឈ្មោះ ឬអ្នកផ្តាច់កញ្ចប់។ វាលផ្សេងទៀតអាចត្រូវបានប្រើដោយឆ្លងកាត់ជម្រើសសមស្របរបស់ពួកគេ។</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>ធ្វើបច្ចុប្បន្នភាពកញ្ចប់ដែលបានផ្តល់ឱ្យ</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>ការប្រើ</value>
@@ -654,5 +693,232 @@
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>តម្លៃដែលបានផ្តល់មកមុនពេល​ស្នើសុំ​ការបញ្ចប់</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>រកមិនឃើញកំណែត្រូវគ្នា៖</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>គ្មានប្រភពណាត្រូវនឹងតម្លៃដែលបានផ្ដល់ទេ៖</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>ប្រភពដែលបានកំណត់រចនាសម្ព័ន្ធគឺ៖</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>គ្មានប្រភពកំណត់; បន្ថែមមួយជាមួយ 'source add' ឬកំណត់ឡើងវិញទៅលំនាំដើមដោយ 'source reset'</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>បានរកឃើញ</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>ផ្លូវជាថតឯកសារ៖</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>មិនមានឯកសារ៖</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>ទាំងអាគុយម៉ង់ក្នុងតំបន់ និងអាគុយម៉ង់សំណួរស្វែងរកត្រូវបានផ្តល់ជូន</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>កំណត់ហេតុ</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>កម្មវិធីដំឡើង​ត្រូវបាន​ប្លុក​ដោយគោលការណ៍</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>កម្មវិធី​ដំឡើង​មិន​អាច​ត្រួតពិនិត្យសន្តិសុខ​បាន​ទេ</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>ផលិតផល​ប្រឆាំងមេរោគ​រាយការណ៍អំពី​ការឆ្លងមេរោគ​នៅក្នុងកម្មវិធីដំឡើង</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>បានបរាជ័យ​ក្នុងការព្យាយាម​អាប់ដេត​ប្រភព៖</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>លុបកញ្ចប់ដែលបានជ្រើសរើស ទោះបីជារកឃើញតាមការស្វែងរកបញ្ជីកញ្ចប់ដែលបានដំឡើង ឬដោយផ្ទាល់ពីមេនីហ្វេសថ៍ក៏ដោយ។ តាមលំនាំដើម សំណួរត្រូវតែត្រូវគ្នានឹងលេខសម្គាល់ ឈ្មោះ ឬឈ្មោះហៅក្រៅរបស់​កញ្ចប់​ដោយមិនបែងចែកអក្សរធំតូច។ កន្លែងបញ្ចូល​ផ្សេងទៀតអាចត្រូវបានប្រើដោយឆ្លងកាត់ជម្រើសដែលសមស្របរបស់កន្លែងបញ្ចូលទាំងនោះ។</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>លុបកញ្ចប់ដែលបានផ្ដល់</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>កំពុងចាប់ផ្ដើម​លុបកញ្ចប់...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>បានលុប​​ដោយជោគជ័យ</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget មិនអាចកំណត់ទីតាំង​ការបញ្ជាដែលលុបសម្រាប់​កញ្ចប់នេះបានទេ។ សូមទាក់ទងទៅ​អ្នកបោះពុម្ពផ្សាយ​កញ្ចប់​ ដើម្បីទទួលបានជំនួយ។</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>បានបោះបង់​ការលុប</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>មិនអាចលុបបានទេ ហើយកូដចេញគឺ៖</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>នាំចេញបញ្ជីនៃកញ្ចប់ដែលបានដំឡើង</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>ដំឡើងកញ្ចប់ទាំងអស់ដែលបានដាក់ជាបញ្ជីនៅក្នុងឯកសារ។</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>ដំឡើងកញ្ចប់ទាំងអស់នៅក្នុងឯកសារ</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>ឯកសារដែលលទ្ធផលត្រូវបានកត់ត្រា</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>ឯកសារដែលពណ៌នាអំពីកញ្ចប់សម្រាប់ដំឡើង</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>នាំចេញកញ្ចប់ពីប្រភពដែលបានបញ្ជាក់</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>សរសេរបញ្ជីនៃកញ្ចប់ដែលបានដំឡើងទៅឯកសារ។ បន្ទាប់មក កញ្ចប់អាចត្រូវបានដំឡើងជាមួយការបញ្ជា import។</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>មិនអាចដំឡើងកញ្ចប់ដែលនាំចូលមួយ ឬច្រើនបានទេ</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>រកមិនឃើញកញ្ចប់សម្រាប់នាំចូលទេ៖</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>ប្រភពដែលតម្រូវឱ្យមានសម្រាប់ការនាំចូលមិនត្រូវបានដំឡើងទេ៖</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>មិនមានកំណែកញ្ចប់ដែលបានដំឡើងពីប្រភពណាមួយទេ៖</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>មិនមានកំណែកញ្ចប់ដែលបានដំឡើងពីប្រភពណាមួយទេ៖</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>រកមិនឃើញកញ្ចប់នៅក្នុងឯកសារនាំចូលទេ</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>ឯកសារ JSON មិនត្រឹមត្រូវទេ</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>កញ្ចប់ត្រូវបានដំឡើងរួចហើយ៖</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>មិនអើពើកញ្ចប់ដែលមិនអាចប្រើបាន</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>រួមបញ្ចូលកំណែកញ្ចប់នៅក្នុងឯកសារដែលបានផលិត</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>មិនអើពើកំណែកញ្ចប់ពីឯកសារនាំចូល</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>មិនមានផ្លូវទេ៖</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>ឯកសារ JSON មិនបានបញ្ជាក់ពីស្គីមម៉ាដែលបានទទួលស្គាល់ទេ។</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>ជ្រើសរើសវិសាលភាពនៃការដំឡើង (អ្នកប្រើ ឬម៉ាស៊ីន)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>តម្លៃដែលបានផ្តល់សម្រាប់អាគុយម៉ង់ '%1' មិនត្រឹមត្រូវទេ។ តម្លៃត្រឹមត្រូវគឺ</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>ប្រតិបត្តិការនេះត្រូវបានបិទដោយគោលការណ៍ក្រុម</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>បើកប្រភពកម្មវិធីដំឡើងកម្មវិធី Windows បន្ថែម</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>បើកប្រភពដែលអនុញ្ញាតរបស់កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>បើកប្រភពលំនាំដើមរបស់​កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>បើកមុខងារ​បែប​ពិសោធន៍របស់​កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>បើកប្រភព Microsoft Store របស់​កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>បើកការកំណត់នៃឧបករណ៍គ្រប់គ្រងកញ្ចប់របស់ Windows</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>បើកឧបករណ៍គ្រប់គ្រងកញ្ចប់របស់ Windows</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>កំណត់ចន្លោះពេលធ្វើ​បច្ចុប្បន្នភាព​ប្រភព​ដោយ​ស្វ័យប្រវត្តិនៃ​ឧបករណ៍គ្រប់គ្រង​កញ្ចប់របស់ Windows ជានាទី</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>បានបិទ</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>បានបើក</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>គោលការណ៍ក្រុម</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>ស្ថានភាព</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>បើកឯកសារមេនីហ្វេសថ៍ក្នុងឧបករណ៍របស់កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>កន្លែង​បញ្ចូល៖</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>ទម្រង់កន្លែងបញ្ចូលមិនត្រឹមត្រូវទេ។</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>តម្លៃនៃកន្លែងបញ្ចូលមិនត្រឹមត្រូវទេ។</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>ការកំណត់មិនត្រឹមត្រូវពីគោការណ៍ក្រុម។</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>បានស្រង់ការកំណត់ពីឯកសារបម្រុងទុក។</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>បញ្ហា​ក្នុង​ការញែកឯកសារ៖</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>តម្លៃ៖</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>មុខងារ​បែប​ពិសោធន៍ដូចខាងក្រោមកំពុងតែដំណើរការ។
+ការរៀបចំត្រូវបានបិទ ដោយសារតែគោលការណ៍ក្រុម។</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>កូដតំណាងកម្មវិធីដំឡើងមិនត្រូវគ្នាទេ។</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>បើកការលុប​ពី​លើ​កូដ​តំណាង​កម្មវិធីដំឡើងកម្មវិធី Windows</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>នាំចេញប្រភពបច្ចុប្បន្នជា JSON សម្រាប់គោលការណ៍ក្រុម។</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>នាំចេញ​ប្រភព​បច្ចុប្បន្ន​</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>ប្រភពបន្ថែម</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>ប្រភពដែលអនុញ្ញាត</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>តម្លៃដែលបានផ្តល់សម្រាប់អាគុយម៉ង់ '%1' មិនត្រឹមត្រូវទ</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

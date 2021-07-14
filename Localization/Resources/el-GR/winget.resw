@@ -130,6 +130,10 @@
     <value>Οι ακόλουθες εντολές είναι διαθέσιμες:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Διαθέσιμα</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Οι ακόλουθες επιλογές είναι διαθέσιμες:</value>
   </data>
@@ -294,8 +298,9 @@
   <data name="InvalidNameError" xml:space="preserve">
     <value>Το όνομα του ορίσματος δεν αναγνωρίστηκε για την τρέχουσα εντολή</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Γλώσσα εγκατάστασης (εάν υποστηρίζεται)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Τοπικές ρυθμίσεις για χρήση (μορφή BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Άδεια χρήσης</value>
@@ -303,6 +308,13 @@
   <data name="Links" xml:space="preserve">
     <value>Συνδέσεις</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>Η εντολή list εμφανίζει τα πακέτα που είναι εγκατεστημένα στο σύστημα, καθώς και αν υπάρχει διαθέσιμη ενημέρωση. Μπορούν να δοθούν επιπλέον επιλογές για το φιλτράρισμα της εξόδου, όπως είναι η εντολή search.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Εμφάνιση εγκατεστημένων πακέτων</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Τοποθεσία εγκατάστασης στο (εάν υποστηρίζεται)</value>
@@ -341,11 +353,11 @@
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Δεν ήταν δυνατός ο υπολογισμός του κατακερματισμού υπογραφής MSIX.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Δεν ήταν δυνατή η εγκατάσταση του πακέτου Microsoft Store επειδή η συγκεκριμένη εφαρμογή έχει αποκλειστεί από την πολιτική</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η εγκατάσταση ή η ενημέρωση του πακέτου Microsoft Store επειδή η συγκεκριμένη εφαρμογή έχει αποκλειστεί από την πολιτική</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Δεν ήταν δυνατή η εγκατάσταση του πακέτου Microsoft Store. Κωδικός σφάλματος:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η εγκατάσταση ή η ενημέρωση του πακέτου Microsoft Store. Κωδικός σφάλματος:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Η επαλήθευση/υποβολή αιτήματος για λήψη πακέτου απέτυχε: σφάλμα δικτύου</value>
@@ -359,11 +371,14 @@
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Επιτυχία επαλήθευσης/υποβολής αιτήματος για λήψη πακέτου</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Δεν ήταν δυνατή η εγκατάσταση του πακέτου Microsoft Store επειδή το πρόγραμμα-πελάτης του Microsoft Store έχει αποκλειστεί από την πολιτική</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η εγκατάσταση ή η ενημέρωση του πακέτου Microsoft Store επειδή το πρόγραμμα-πελάτης του Microsoft Store έχει αποκλειστεί από την πολιτική</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Επαλήθευση/υποβολή αιτήματος για λήψη πακέτου...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Βρέθηκαν πολλά εγκατεστημένα πακέτα που ταιριάζουν με τα κριτήρια εισόδου. Περιορίστε τα δεδομένα εισόδου.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Βρέθηκαν πολλά πακέτα που ταιριάζουν με τα κριτήρια εισόδου. Περιορίστε τα δεδομένα εισόδου.</value>
@@ -372,10 +387,13 @@
     <value>Φιλτράρισμα αποτελεσμάτων κατά όνομα</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Δεν υπάρχουν προγράμματα εγκατάστασης που να ισχύουν για το τρέχον σύστημα.</value>
+    <value>Δεν βρέθηκε κανένα ισχύον πρόγραμμα εγκατάστασης, ανατρέξτε σε αρχεία καταγραφής για περισσότερες λεπτομέρειες.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Αυτή τη στιγμή δεν υπάρχουν διαθέσιμες πειραματικές δυνατότητες. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Δεν βρέθηκαν εγκατεστημένα πακέτα που να πληρούν τα κριτήρια εισαγωγής.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Δεν βρέθηκαν πακέτα που να πληρούν τα κριτήρια εισαγωγής.</value>
@@ -460,7 +478,7 @@
     <value>Κανάλι</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Εμφανίζει πληροφορίες σχετικά με ένα συγκεκριμένο πακέτο. Από προεπιλογή, το ερώτημα πρέπει να συμφωνεί χωρίς διάκριση πεζών-κεφαλαίων με την ταυτότητα, το όνομα ή το αναγνωριστικό του πακέτου. Άλλα πεδία μπορούν να χρησιμοποιηθούν με την κατάλληλη επιλογή.</value>
+    <value>Εμφανίζει πληροφορίες για ένα συγκεκριμένο πακέτο. Από προεπιλογή, το ερώτημα πρέπει να insensitively να συμφωνεί με το Αναγνωριστικό, το όνομα ή το αναγνωριστικό του πακέτου. Τα άλλα πεδία μπορούν να χρησιμοποιηθούν μέσω της κατάλληλης επιλογής τους.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Εμφανίζει πληροφορίες σχετικά με ένα πακέτο</value>
@@ -520,7 +538,7 @@
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Λιβάδι</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Όνομα</value>
@@ -542,7 +560,7 @@
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>ποτέ</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Τιμή</value>
@@ -550,6 +568,14 @@
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Όνομα της προέλευσης</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Το άνοιγμα της προέλευσης απέτυχε. Δοκιμάστε την εντολή "επαναφορά προέλευσης" (source reset) αν το πρόβλημα δεν επιλυθεί.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Απέτυχε το άνοιγμα της προκαθορισμένη προέλευσης. Αναφέρετέ το στα προγράμματα διατήρησης winget.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Κατάργηση όλων των προελεύσεων...</value>
@@ -619,13 +645,26 @@
     <value>Το όρισμα παρέχεται περισσότερες φορές από όσες επιτρέπονται</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Παρέχεται παραπάνω από ένα όρισμα συμπεριφοράς εγκατάστασης</value>
+    <value>Παρέχεται παραπάνω από ένα όρισμα συμπεριφοράς εκτέλεσης</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Παρουσιάστηκε μη αναμενόμενο σφάλμα κατά την εκτέλεση της εντολής:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Η εντολή δεν αναγνωρίστηκε</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Ενημέρωση όλων των εγκατεστημένων πακέτων στην πιο πρόσφατη έκδοση, εάν είναι διαθέσιμη</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Δεν βρέθηκαν ισχύουσες ενημερώσεις.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Αναβαθμίζει το επιλεγμένο πακέτο, που βρέθηκε με αναζήτηση στη λίστα εγκατεστημένων πακέτων ή απευθείας από μια διακήρυξη. Από προεπιλογή, το ερώτημα πρέπει να insensitively να συμφωνεί με το Αναγνωριστικό, το όνομα ή το αναγνωριστικό του πακέτου. Τα άλλα πεδία μπορούν να χρησιμοποιηθούν μέσω της κατάλληλης επιλογής τους.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Αναβαθμίζει το συγκεκριμένο πακέτο</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>χρήση</value>
@@ -654,5 +693,232 @@
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Ζητείται η τιμή που παρέχεται πριν από την ολοκλήρωση</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Δεν βρέθηκε έκδοση που να ταιριάζει:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Δεν υπάρχουν προελεύσεις που να ταιριάζουν με τη δεδομένη τιμή:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Οι ρυθμισμένες προελεύσεις είναι:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Δεν έχουν οριστεί προελεύσεις. Προσθέστε μία με την εντολή "προσθήκη προέλευσης" (source add) ή επαναφέρετε τις προεπιλογές με την εντολή "επαναφορά προέλευσης" (source reset)</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Εντοπίστηκαν</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Η διαδρομή είναι ένας κατάλογος:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Παρέχονται τόσο τα ορίσματα τοπικής διακήρυξης όσο και ερωτήματος αναζήτησης</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Αρχεία καταγραφής</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Το πρόγραμμα εγκατάστασης αποκλείστηκε από την πολιτική</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Το πρόγραμμα εγκατάστασης δεν πραγματοποίησε έλεγχο ασφαλείας</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Προϊόν προστασίας από ιούς αναφέρει προσβολή από ιό στο πρόγραμμα εγκατάστασης</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Η απόπειρα ενημέρωσης της προέλευσης απέτυχε:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Καταργεί την εγκατάσταση το επιλεγμένο πακέτο, που εντοπίζεται με αναζήτηση στη λίστα εγκατεστημένων πακέτων ή απευθείας από μια διακήρυξη. Από προεπιλογή, το ερώτημα πρέπει να insensitively να συμφωνεί με το Αναγνωριστικό, το όνομα ή το αναγνωριστικό του πακέτου. Τα άλλα πεδία μπορούν να χρησιμοποιηθούν μέσω της κατάλληλης επιλογής τους.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Κατάργηση εγκατάστασης του συγκεκριμένου πακέτου</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Έναρξη κατάργησης εγκατάστασης πακέτου...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Η εγκατάσταση καταργήθηκε επιτυχώς</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget δεν είναι δυνατό να εντοπίσει την εντολή κατάργησης εγκατάστασης για αυτό το πακέτο. Επικοινωνήστε με τον εκδότη του πακέτου για υποστήριξη.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Η κατάργηση εγκατάστασης ματαιώθηκε</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Η κατάργηση εγκατάστασης με κωδικό εξόδου απέτυχε:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Εξαγάγει λίστα με τα εγκατεστημένα πακέτα</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Εγκαθιστά όλα τα πακέτα που αναφέρονται σε ένα αρχείο.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Εγκαθιστά όλα τα πακέτα σε ένα αρχείο</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Αρχείο όπου θα καταχωρηθεί το αποτέλεσμα</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Αρχείο που περιγράφει τα πακέτα προς εγκατάσταση</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Εξαγωγή πακέτων από την καθορισμένη προέλευση</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Εγγράφει μια λίστα με τα εγκατεστημένα πακέτα σε ένα αρχείο. Τα πακέτα μπορούν να εγκατασταθούν στη συνέχεια με την εντολή import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Απέτυχε η εγκατάσταση ενός ή περισσότερων πακέτων που έχουν εισαχθεί</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Το πακέτο δεν βρέθηκε για εισαγωγή:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Η προέλευση που απαιτείται για την εισαγωγή δεν έχει εγκατασταθεί:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Το εγκατεστημένο πακέτο δεν είναι διαθέσιμο από καμία προέλευση:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Η εγκατεστημένη έκδοση του πακέτου δεν είναι διαθέσιμη από καμία προέλευση:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Δεν βρέθηκαν πακέτα στο αρχείο εισαγωγής</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>Το αρχείο JSON δεν είναι έγκυρο</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Το πακέτο είναι ήδη εγκαταστημένο:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Παράβλεψη μη διαθέσιμων πακέτων</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Συμπερίληψη εκδόσεων πακέτου στο παραγόμενο αρχείο</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Παράβλεψη εκδόσεων πακέτου από αρχείο εισαγωγής</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Η διαδρομή δεν υπάρχει:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>Το αρχείο JSON δεν καθορίζει ένα αναγνωρισμένο σχήμα.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Επιλογή εμβέλειας εγκατάστασης (χρήστης ή υπολογιστής)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Η τιμή που δόθηκε για το όρισμα '%1' δεν είναι έγκυρη. έγκυρες τιμές είναι</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Αυτή η λειτουργία έχει απενεργοποιηθεί από την Πολιτική ομάδας</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Ενεργοποίηση πρόσθετων προελεύσεων προγράμματος εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Ενεργοποίηση των επιτρεπόμενων προελεύσεων του προγράμματος εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Ενεργοποίηση προεπιλεγμένης προέλευσης του προγράμματος εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Ενεργοποίηση πειραματικών δυνατοτήτων του προγράμματος εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Ενεργοποίηση προέλευσης του Microsoft Store για το Πρόγραμμα εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Ενεργοποίηση ρυθμίσεων της Διαχείρισης πακέτου των Windows</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Ενεργοποίηση Διαχείρισης πακέτου των Windows</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Ορισμός χρονικού διαστήματος αυτόματης ενημέρωσης προέλευσης σε λεπτά για τη Διαχείρισης πακέτου των Windows</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Απενεργοποιημένο</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Ενεργοποιημένο</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Πολιτική ομάδας</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Κατάσταση</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Ενεργοποίηση των αρχείων διακήρυξης εφαρμογής του προγράμματος εγκατάστασης εφαρμογής των Windows</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Πεδίο:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Μη έγκυρη μορφή πεδίου.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Μη έγκυρη τιμή πεδίου.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Μη έγκυρη ρύθμιση από την Πολιτική ομάδας.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Ρυθμίσεις που φορτώθηκαν από το αρχείο αντιγράφου ασφαλείας.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Σφάλμα ανάλυσης αρχείου:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Τιμή:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Οι παρακάτω πειραματικές δυνατότητες βρίσκονται σε εξέλιξη.
+Η ρύθμιση παραμέτρων είναι απενεργοποιημένη λόγω της πολιτικής ομάδας.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Ο κωδικός κατακερματισμού του προγράμματος εγκατάστασης δεν συμφωνεί.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Ενεργοποίηση παράκαμψης κατακερματισμού του προγράμματος εγκατάστασης εφαρμογή των Windows</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Εξαγωγή τρεχουσών προελεύσεων ως JSON για την Πολιτική ομάδας.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Εξαγωγή τρεχουσών προελεύσεων</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Πρόσθετη προέλευση</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Επιτρεπόμενη προέλευση</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Η τιμή που δόθηκε για το όρισμα '%1' δεν είναι έγκυρη</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

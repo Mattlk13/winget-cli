@@ -130,6 +130,10 @@
     <value>הפקודות הבאות זמינות:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>זמין</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>האפשרויות הבאות זמינות:</value>
   </data>
@@ -294,8 +298,9 @@
   <data name="InvalidNameError" xml:space="preserve">
     <value>שם הארגומנט לא זוהה עבור הפקודה הנוכחית</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>השפה שיש להתקין (אם היא נתמכת)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>אזור לשימוש (תבנית BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>הסכם רישיון</value>
@@ -303,6 +308,13 @@
   <data name="Links" xml:space="preserve">
     <value>קישורים</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>הפקודה 'list' מציגה את החבילות המותקנות במערכת, וכן אם יש עדכון זמין. ניתן לספק אפשרויות נוספות כדי לסנן את הפלט, בדומה לפקודה 'search'.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>הצג חבילות מותקנות</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>המיקום שיש להתקין בו (אם הוא נתמך)</value>
@@ -341,11 +353,11 @@
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>חישוב Hash החתימה של MSIX נכשל.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>לא ניתן להתקין את חבילת Microsoft Store מכיוון שהיישום הספציפי נחסם על-ידי מדיניות</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>לא היתה אפשרות להתקין או לעדכן את חבילת Microsoft Store מכיוון שהאפליקציה הספציפית נחסמה על-ידי מדיניות</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>התקנת חבילת Microsoft Store נכשלה. קוד שגיאה:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>לא היתה אפשרות להתקין או לעדכן את חבילת Microsoft Store. קוד שגיאה:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>פעולת האימות/בקשה לרכישת חבילות נכשלה: שגיאת רשת</value>
@@ -359,11 +371,14 @@
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>פעולת האימות/בקשה לרכישת חבילות הצליחה</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>התקנת חבילת Microsoft Store נכשלה מכיוון שלקוח Microsoft Store חסום על-ידי מדיניות</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>לא היתה אפשרות להתקין או לעדכן את חבילת Microsoft Store מכיוון שלקוח Microsoft Store נחסם על-ידי מדיניות</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>מאמת/מבקש רכישת חבילות...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>נמצאו חבילות מותקנות מרובות המתאימות לקריטריוני הקלט. מקד את הקלט.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>נמצאו חבילות מרובות המתאימות לקריטריוני הקלט. מקד את הקלט.</value>
@@ -372,10 +387,13 @@
     <value>סינון התוצאות לפי שם</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>אין תוכנות התקנה מתאימות למערכת הנוכחית.</value>
+    <value>לא נמצא מתקין ישים; עיין ביומני הרישום לקבלת פרטים נוספים.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>אין כרגע תכונות ניסיוניות זמינות. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>לא נמצאה חבילה מותקנת התואמת לקריטריוני קלט.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>לא נמצאה חבילה התואמת לקריטריוני קלט.</value>
@@ -520,7 +538,7 @@
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>שדה</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>שם</value>
@@ -542,7 +560,7 @@
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>לעולם לא</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>ערך</value>
@@ -550,6 +568,14 @@
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>שם המקור</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>פתיחת המקור נכשלה; נסה את הפקודה 'source reset' אם הבעיה נמשכת.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>פתיחת המקור המוגדר מראש נכשלה; דווח לאנשי התחזוקה של winget.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>מסיר את כל המקורות...</value>
@@ -619,13 +645,26 @@
     <value>הארגומנט סופק יותר פעמים מהמותר</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>סופק יותר מארגומנט אחד הקובע את התנהגות ההתקנה</value>
+    <value>סופק יותר מארגומנט אחד הקובע את התנהגות הביצוע</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>אירעה שגיאה לא צפויה בעת ביצוע הפקודה:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>פקודה בלתי מזוהה</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>עדכן את כל החבילות המותקנות לחבילות העדכניות ביותר, אם הן זמינות</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>לא נמצא עדכון רלוונטי.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>שדרוג החבילה הנבחרת, נמצא על-ידי חיפוש ברשימת החבילות המותקנות או ישירות ממניפסט. כברירת מחדל, השאילתה חייבת להיות מתאימה לרישיות בהתאם למזהה, לשם או לכינוי של החבילה. ניתן להשתמש בשדות אחרים על-ידי העברת האפשרות המתאימה שלהם.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>עדכונים את החבילה הנתונה</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>שימוש</value>
@@ -654,5 +693,232 @@
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>הערך סופק לפני בקשת ההשלמה</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>לא נמצאה גירסה תואמת:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>אין מקורות התואמים לערך הנתון:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>המקורות שתצורתם נקבעה:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>לא הוגדרו מקורות; הוסף מקור באמצעות 'source add' או אפס לברירות המחדל באמצעות 'source reset'</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>נמצא</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>הנתיב הוא ספריה:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>הקובץ אינו קיים:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>סופקו ארגומנטים גם למניפסט היישום מקומי וגם לשאילת החיפוש</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>יומנים</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>המתקין חסום על-ידי מדיניות</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>המתקין נכשל בבדיקת אבטחה</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>מוצר למניעת וירוס מדווח על הידבקות במתקין</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>הניסיון לעדכן את המקור נכשל:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>הסרת ההתקנה של החבילה שנבחרה, נמצאה על-ידי חיפוש ברשימת החבילות המותקנות או ישירות ממניפסט. כברירת מחדל, השאילתה חייבת להיות מתאימה לרישיות בהתאם למזהה, לשם או לכינוי של החבילה. ניתן להשתמש בשדות אחרים על-ידי העברת האפשרות המתאימה שלהם.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>מסיר התקנה לחבילה נתונה</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>מתחיל הסרת התקנה של חבילה...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>ההתקנה הוסרה בהצלחה</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget אין אפשרות לאתר את פקודת הסרת ההתקנה עבור חבילה זו. פנה אל מפרסם החבילה לקבלת תמיכה.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>הסרת התקנה ננטשה</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>הסרת ההתקנה נכשלה עם קוד יציאה:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>מייצא רשימה של החבילות המותקנות</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>מתקין את כל החבילות המפורטות בקובץ.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>מתקין את כל החבילות בקובץ</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>הקובץ שבו יש לכתוב את התוצאה</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>קובץ המתאר את החבילות שיש להתקין</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>יצא חבילות מהמקור שצוין</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>כותב רשימה של החבילות המותקנות לקובץ. ניתן להתקין את החבילות באמצעות הפקודה import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>התקנת חבילות מיובאת אחת או יותר נכשלה</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>לא נמצאה חבילה לייבוא:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>המקור הנדרש לצורך ייבוא אינו מותקן:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>החבילה המותקנת אינה זמינה בשום מקור:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>הגירסה המותקנת של החבילה אינה זמינה בשום מקור:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>לא נמצאו חבילות בקובץ הייבוא</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>קובץ JSON אינו חוקי</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>החבילה כבר מותקנת:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>התעלם מחבילות לא זמינות</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>כלול גירסאות חבילות בקובץ המופק</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>התעלם מגירסאות החבילות בקובץ הייבוא</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>‏‏הנתיב אינו קיים:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>קובץ ה- JSON אינו מציין סכימה מוכרת.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>בחר היקף התקנה (משתמש או מחשב)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>הערך שסופק עבור הארגומנט '%1' אינו חוקי; ערכים חוקיים הם</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>פעולה זו אינה זמינה עקב מדיניות קבוצתית</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>הפוך מקורות נוספים של מתקין האפליקציות של Windows לזמינים</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>הפוך מקורות מורשים של מתקין האפליקציות של Windows לזמינים</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>הפוך את מקור ברירת המחדל של מתקין האפליקציות של Windows לזמין</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>הפוך תכונות ניסיוניות של מתקין האפליקציות של Windows לזמינות</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>הפוך את מקור Microsoft Store של מתקין האפליקציות של Windows לזמין.</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>הפוך את הגדרות מנהל החבילות של Windows לזמינות</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>הפוך את מנהל החבילות של Windows לזמין</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>הגדר בדקות מרווח זמן לעדכון אוטומטי של מקור מנהל החבילות של Windows</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>לא זמין</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>זמין</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>מדיניות קבוצתית</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>מצב</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>הפוך קבצי מניפסט מקומיים של מתקין האפליקציות של Windows לזמינים</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>שדה:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>תבנית שדה לא חוקית.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>ערך שדה לא חוקי.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>הגדרה לא חוקית מהמדיניות הקבוצתית.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>נטענו הגדרות מקובץ גיבוי.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>שגיאה בניתוח מבנה הטקסט של הקובץ:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>ערך:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>התכונות הניסיוניות הבאות נמצאות כעת בביצוע.
+קביעת תצורה אינה זמינה עקב מדיניות קבוצתית.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>קוד ה- Hash של המתקין אינו תואם.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>הפוך עקיפת קוד Hash של מתקין האפליקציות של Windows לזמינה</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>ייצא את המקורות הנוכחיים כ- JSON עבור מדיניות קבוצתית.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>ייצוא מקורות נוכחיים</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>מקור נוסף</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>מקור מורשה</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>הערך שסופק עבור הארגומנט '%1' אינו חוקי</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

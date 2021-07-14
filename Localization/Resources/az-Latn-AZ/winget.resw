@@ -130,6 +130,10 @@
     <value>Aşağıdakı əmrlər əlçatandır:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Mövcud</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Aşağıdakı seçimlər əlçatandır:</value>
   </data>
@@ -294,8 +298,9 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   <data name="InvalidNameError" xml:space="preserve">
     <value>Cari əmr üçün arqument adı tanınmadı</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Quraşdırılacaq dil (dəstəklənirsə)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>(BCP47 formatı) istifadə etmək üçün dil standartları</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Lisenziya Razılaşması</value>
@@ -303,6 +308,13 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   <data name="Links" xml:space="preserve">
     <value>Keçidlər</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>list əmri sistemdə quraşdırılmış paketləri, o cümlədən yeniləmənin mövcud olub-olmadığını göstərir. Nəticəni süzgəcdən keçirmək üçün əlavə seçimlər, əsasən də search əmri təqdim edilə bilər.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Quraşdırılmış paketləri göstər</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Quraşdırılacaq məkan (dəstəklənirsə)</value>
@@ -341,11 +353,11 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>MSIX imza heşini hesablamaq alınmadı.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Xüsusi proqram siyasətlə bloklandığından Microsoft Store paketini quraşdırmaq alınmadı</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Xüsusi proqram siyasətlə bloklandığından Microsoft Store paketini quraşdırmaq və ya yeniləmək alınmadı</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Microsoft Store paketini quraşdırmaq alınmadı. Səhv kodu:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Microsoft Mağaza paketi quraşdırılmadı və ya yenilənmədi. Səhv kodu:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Paketin əldə olunmasının yoxlanılması/sorğulanması alınmadı: şəbəkə səhvi var</value>
@@ -359,11 +371,14 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Paketin əldə olunmasının yoxlanılması/sorğulanması uğurlu oldu</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Microsoft Store müştərisi siyasətlə bloklandığından Microsoft Store paketini quraşdırmaq mümkün olmadı</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Microsoft Store müştərisi siyasətlə bloklandığından Microsoft Store paketini quraşdırmaq və ya yeniləmək alınmadı</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Paketin əldə olunması yoxlanılır/sorğulanır...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Daxiletmə meyarına uyğun gələn çoxlu quraşdırılmış paketlər tapıldı. Lütfən, daxiletməni təkmilləşdirin.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Daxiletmə meyarına uyğun gələn çoxlu paketlər tapıldı. Lütfən, daxiletməni təkmilləşdirin..</value>
@@ -372,10 +387,13 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
     <value>Nəticələri ada görə süzgəcdən keçirin</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Cari sistem üçün heç bir quraşdırıcı tətbiq edilmir.</value>
+    <value>Müvafiq quraşdırıcı tapılmadı; daha ətraflı məlumat üçün qeydlərə baxın.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
-    <value>Hal-hazırda heç bir eksperimental xüsusiyyətlər mövcud deyil.</value>
+    <value>Hal-hazırda heç bir eksperimental xüsusiyyətlər mövcud deyil. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Daxiletmə meyarına uyğun gələn quraşdırılmış paket tapılmadı.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Daxiletmə meyarına uyğun gələn heç bir paket tapılmadı.</value>
@@ -460,7 +478,7 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
     <value>Kanal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Xüsusi paketlə bağlı məlumatı göstərir. Standart şəkildə sorğu böyük-kiçik hərfə həssas olmadan paketin identifikatoru, adı və ya ayaması ilə uyğun gəlməlidir. Başqa sahələrdən onların müvafiq seçimini ötürməklə istifadə oluna bilər.</value>
+    <value>Xüsusi paketlə bağlı məlumatı göstərir. Standart şəkildə sorğu böyük-kiçik hərfə həssas olmadan paketin identifikatoru, adı və ya ləqəbi ilə uyğun gəlməlidir. Başqa sahələrdən onların müvafiq seçimini ötürməklə istifadə oluna bilər.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Paket haqqında məlumatı göstərir</value>
@@ -520,7 +538,7 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Sahə</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Ad</value>
@@ -542,7 +560,7 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>heç vaxt</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Qiymət</value>
@@ -550,6 +568,14 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Mənbənin adı</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Mənbəni açmaq alınmadı; problem davam edərsə, 'source reset' əmrini sınaqdan keçirin.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Əvvəlcədən müəyyən edilmiş mənbəni açmaq mümkün olmadı; winget ustalarına bildirməyiniz xahiş olunur.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Bütün mənbələr silinir...</value>
@@ -619,13 +645,26 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
     <value>Arqument icazə veriləndən çox təmin edildi</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Birdən çox quraşdırma əməliyyatı arqumenti təmin edilib</value>
+    <value>Birdən çox dinamik davranış arqumenti təqdim edilib</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Əmri icra edərkən gözlənilməz səhv baş verdi:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Tanınmayan əmr</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Bütün quraşdırılmış paketləri, mövcud olarsa, ən son versiyaya yeniləyin</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Müvafiq yeniləmə tapılmadı.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Ya quraşdırılmış paketlər siyahısını axtarmaqla, ya da birbaşa manifestdən tapılan seçilmiş paketi yeniləyir. Standart olaraq sorğu böyük-kiçik hərfə həssas olmadan paketin identifikatoru, adı və ya ləqəbi ilə uyğun gəlməlidir. Digər sahələr müvafiq seçimi keçərək istifadə edilə bilər.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Verilmiş paketi yeniləyir</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>istifadə</value>
@@ -654,5 +693,232 @@ Onlar parametrlər faylı olan 'winget settings' vasitəsilə konfiqurasiya edil
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Tamamlanmadan əvvəl verilən qiymət tələb olunur</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Uyğun gələn versiya tapılmadı:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Verilən qiymətə uyğun mənbə tapılmadı:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Konfiqurasiya edilmiş mənbələr:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Mənbə müəyyən edilməyib; 'source add' ilə birini seçin və ya 'source reset' ilə standart qiymətlərə sıfırlayın</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Tapıldı</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Yol kataloqdur:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Fayl mövcud deyil:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Həm lokal manifest, həm də axtarış sorğusu arqumentləri təqdim olunub</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Jurnallar</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Quraşdırıcı siyasətə əsasən bloklanıb</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Quraşdırıcı təhlükəsizlik yoxlamasından keçə bilmədi</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Antivirus məhsulu quraşdırıcıda virus yoluxması olduğunu bildirir</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Mənbəni yeniləmək cəhdi uğursuz oldu:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Ya quraşdırılmış paketlər siyahısında axtarmaqla, ya da birbaşa manifestdən tapılan seçilmiş paketin quraşdırılmasını ləğv edir. Standart olaraq sorğu böyük-kiçik hərfə həssas olmadan paketin identifikatoru, adı və ya ayaması ilə uyğun gəlməlidir. Başqa sahələrdən onların müvafiq seçimini ötürməklə istifadə oluna bilər.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Verilmiş paketin quraşdırılmışını ləğv edir</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Paketin quraşdırılmışının ləğvi başladılır...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Quraşdırılmış uğurla ləğv olundu</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget bu paket üçün quraşdırılmışın ləğvi əmrini tapa bilmir. Dəstək üçün paketin naşiri ilə əlaqə saxlayın.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Quraşdırılmışın ləğvi dayandırıldı</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Quraşdırılmışın ləğvi verilən çıxış kodu ilə alınmadı:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Quraşdırılmış paketlərin siyahısını ixrac et</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Faylda sadalanan bütün paketləri quraşdırır.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Fayldakı bütün paketləri quraşdırır</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Nəticənin yazılacağı fayl</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Paketlərini quraşdırmaq üçün təsvir edilən fayl</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Göstərilən mənbədən paketləri ixrac et</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Qurulmuş paketlərin siyahısını bir fayla yazır. Paketlər daha sonra “import” əmri ilə quraşdırıla bilər.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Bir və ya daha çox idxal edilmiş paketi quraşdırmaq uğursuz oldu</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>İdxal üçün paket tapılmadı:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Idxal üçün lazım olan mənbə quraşdırılmayıb:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Qurulmuş paket heç bir mənbədən əlçatan deyil:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Paketin quraşdırılmış versiyası heç bir mənbədən əlçatan deyil:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>İdxal sənədində paket tapılmadı</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON faylı düzgün deyil</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Paket artıq quraşdırılıb:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Mövcud paketləri rədd et</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Paket versiyalarını istehsal edilmiş fayla daxil edin</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Paketin quraşdırılmış versiyası heç bir mənbədən əlcatan deyil:</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Yol mövcud deyil:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON faylı tanınmış sxem göstərmir.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Quraşdırma sahəsini seçin (istifadəçi və ya maşın)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>`%1` arqumenti üçün verilən qiymət etibarsızdır; etibarlı qiymətlər</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Bu əməliyyat Qrup Siyasəti tərəfindən qeyri-aktiv edilib</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Əlavə Windows Proqram Quraşdırıcısı Mənbələrini Aktiv et</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Windows Proqram Quraşdırıcısı İcazə verilən Mənbələri Aktiv et</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Windows Proqram Quraşdırıcısı Standart Mənbəsini Aktiv et</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Windows Proqram Quraşdırıcısı Eksperimental Xüsusiyyətləri Aktiv et</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Windows Quraşdırıcısı Proqram Microsoft Store Mənbəsini Aktiv et</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Windows Paket Meneceri Parametrlərini Aktiv et</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Windows Paket Menecerini Aktiv et</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Dəqiqələrdə Windows Paket Meneceri Mənbə Avtomatik Yeniləmə Aralığını təyin edin</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Qeyri-aktiv edilib</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Aktiv edilib</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Qrup Siyasəti</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Vəziyyət</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Windows Proqram Quraşdırıcısı Lokal Manifest Fayllarını Aktiv et</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Sahə:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Yanlış sahə formatı.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Yanlış sahə adı.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Qrup Siyasətindən yanlış parametr.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Nüsxə faylından yüklənmiş parametrlər.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Fayl təhlilində səhv:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Qiymət:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Aşağıdakı eksperimental xüsusiyyətlər icra olunur.
+Konfiqurasiya Qrup Siyasətinə görə qeyri-aktiv edilib.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Quraşdırıcı qarışığı uyğun gəlmir.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Windows Proqram Quraşdırıcısı Qarışığı Əvəzləməsini Aktiv et</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Mövcud mənbələri Qrup Siyasəti üçün JSON kimi ixrac edin.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Cari mənbələri ixrac et</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Əlavə mənbə</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>İcazə verilmiş mənbə</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>`%1` arqumenti üçün verilən qiymət etibarsızdır</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

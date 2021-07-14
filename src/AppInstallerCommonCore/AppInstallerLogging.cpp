@@ -4,6 +4,7 @@
 #include "Public/AppInstallerLogging.h"
 
 #include "Public/AppInstallerFileLogger.h"
+#include "Public/winget/TraceLogger.h"
 #include "Public/AppInstallerTelemetry.h"
 #include "Public/AppInstallerDateTime.h"
 #include "Public/AppInstallerRuntime.h"
@@ -129,19 +130,39 @@ namespace AppInstaller::Logging
         }
     }
 
+    void AddFileLogger()
+    {
+        Log().AddLogger(std::make_unique<FileLogger>());
+    }
+
     void AddFileLogger(const std::filesystem::path& filePath)
     {
         Log().AddLogger(std::make_unique<FileLogger>(filePath));
+    }
+
+    void AddFileLogger(std::string_view fileNamePrefix)
+    {
+        Log().AddLogger(std::make_unique<FileLogger>(fileNamePrefix));
+    }
+
+    void AddTraceLogger()
+    {
+        Log().AddLogger(std::make_unique<TraceLogger>());
     }
 
     void BeginLogFileCleanup()
     {
         FileLogger::BeginCleanup(Runtime::GetPathTo(Runtime::PathName::DefaultLogLocation));
     }
+
+    std::ostream& SetHRFormat(std::ostream& out)
+    {
+        return out << std::hex << std::setw(8) << std::setfill('0');
+    }
 }
 
 std::ostream& operator<<(std::ostream& out, const std::chrono::system_clock::time_point& time)
 {
-    AppInstaller::Utility::OutputTimepoint(out, time);
+    AppInstaller::Utility::OutputTimePoint(out, time);
     return out;
 }

@@ -130,6 +130,10 @@
     <value>ಈ ಕೆಳಗಿನ ಕಮಾಂಡ್‌ಗಳು ಲಭ್ಯವಿದೆ:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>ಲಭ್ಯ</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>ಈ ಕೆಳಗಿನ ಆಯ್ಕೆ‌ಗಳು ಲಭ್ಯವಿದೆ:</value>
   </data>
@@ -294,8 +298,9 @@
   <data name="InvalidNameError" xml:space="preserve">
     <value>ಪ್ರಸ್ತುತ ಕಮಾಂಡ್‌‌ಗೆ ವಾದದ ಹೆಸರನ್ನು ಗುರುತಿಸಲಾಗಿಲ್ಲ</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>ಸ್ಥಾಪಿಸಲು ಭಾಷೆ (ಒಂದು ವೇಳೆ ಬೆಂಬಲಿಸಿದರೆ)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>(BCP47 ಸ್ವರೂಪ) ಬಳಸಲು ಲೋಕೇಲ್</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>ಪರವಾನಗಿ ಒಪ್ಪಂದ</value>
@@ -303,6 +308,13 @@
   <data name="Links" xml:space="preserve">
     <value>ಲಿಂಕ್‍ಗಳು</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>list ಆದೇಶವು ಸಿಸ್ಟಂನಲ್ಲಿ ಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ, ಹಾಗೆಯೇ ನವೀಕರಣವು ಲಭ್ಯವಿದೆಯೇ ಎಂಬುದನ್ನು ತೋರಿಸುತ್ತದೆ. search ಆದೇಶದಂತೆ, ಔಟ್‍ಪುಟ್ ಅನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಲು ಹೆಚ್ಚುವರಿ ಆಯ್ಕೆಗಳನ್ನು ಒದಗಿಸಬಹುದು.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>ಸ್ಥಾಪಿಸಲು ಸ್ಥಳ (ಒಂದು ವೇಳೆ ಬೆಂಬಲಿಸಿದರೆ)</value>
@@ -341,10 +353,10 @@
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>MSIX ಸಹಿ ಹ್ಯಾಶ್ ಲೆಕ್ಕ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>ನಿರ್ದಿಷ್ಟ ಅಪ್ಲಿಯನ್ನು ನೀತಿಯಿಂದ ನಿರ್ಬಂಧಿಸಲಾಗಿರುವ ಕಾರಣ Microsoft Store ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಸ್ಥಾಪಿಸಲು ವಿಫಲವಾಗಿದೆ</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>ನಿರ್ದಿಷ್ಟ ಅಪ್ಲಿಯನ್ನು ನೀತಿಯಿಂದ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ ಯಾಕೆಂದರೆ Microsoft Store ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಸ್ಥಾಪಿಸಲು ಅಥವಾ ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
     <value>Microsoft Store ಪ್ಯಾಕೇಜ್ ಸ್ಥಾಪಿಸಲು ವಿಫಲವಾಗಿದೆ. ದೋಷ ಕೋಡ್:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
@@ -359,11 +371,14 @@
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>ಪ್ಯಾಕೇಜ್ ಸ್ವಾಧೀನ ಯಶಸ್ಸನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ/ವಿನಂತಿಸುತ್ತಿದೆ</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Microsoft Store ಕ್ಲೈಂಟ್ ಅನ್ನು ನೀತಿಯಿಂದ ನಿರ್ಬಂಧಿಸಲಾಗಿರುವ ಕಾರಣ Microsoft Store ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಸ್ಥಾಪಿಸಲು ವಿಫಲವಾಗಿದೆ</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Microsoft Store ಕ್ಲೈಂಟ್ ಅನ್ನು ನೀತಿಯಿಂದ ನಿರ್ಬಂಧಿಸಲಾಗಿರುವ ಕಾರಣ Microsoft Store ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಸ್ಥಾಪಿಸಲು ಅಥವಾ ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>ಪ್ಯಾಕೇಜ್ ಸ್ವಾಧೀನವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ/ವಿನಂತಿಸುತ್ತಿದೆ</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>ಇನ್‍ಪುಟ್ ಮಾನದಂಡಕ್ಕೆ ಹೊಂದಿಕೆಯಾಗುವ ಬಹು ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್‍ಗಳು ಕಂಡುಬಂದಿವೆ. ದಯವಿಟ್ಟು ಇನ್‍ಪುಟ್ ಅನ್ನು ಸಂಸ್ಕರಿಸಬೇಡಿ.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>ಇನ್‍ಪುಟ್ ಮಾನದಂಡಗಳಿಗೆ ಬಹು ಪ್ಯಾಕೇಜ್‍ಗಳು ಕಂಡುಬಂದಿವೆ. ಇನ್‍ಪುಟ್ ಅನ್ನು ದಯವಿಟ್ಟು ಸಂಸ್ಕರಿಸಿ.</value>
@@ -372,10 +387,13 @@
     <value>ಹೆಸರಿನ ಪ್ರಕಾರವಾಗಿ ಫಲಿತಾಂಶಗಳನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>ಪ್ರಸ್ತುತ ವ್ಯವಸ್ಥೆಗೆ ಯಾವುದೇ ಸ್ಥಾಪಕಗಳು ಅನ್ವಯಿಸುವುದಿಲ್ಲ.</value>
+    <value>ಯಾವುದೇ ಅಪ್ಲಿಕೇಶನ್‌ ಇನ್‌ಸ್ಟಾಲರ್ ಕಂಡುಬಂದಿಲ್ಲ; ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗೆ ಲಾಗ್‌ಗಳನ್ನು ನೋಡಿ.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
-    <value>ಯಾವುದೇ ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು ಪ್ರಸ್ತುತ ಲಭ್ಯವಿಲ್ಲ.</value>
+    <value>ಪ್ರಸ್ತುತ ಯಾವುದೇ ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು ಲಭ್ಯವಿಲ್ಲ. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>ಇನ್‍ಪುಟ್ ಮಾನದಂಡಗಳಿಗೆ ಯಾವುದೇ ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್ ಕಂಡುಬಂದಿಲ್ಲ.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>ಇನ್‍ಪುಟ್ ಮಾನದಂಡಗಳಿಗೆ ಯಾವುದೇ ಪ್ಯಾಕೇಜ್ ಕಂಡುಬಂದಿಲ್ಲ.</value>
@@ -420,7 +438,7 @@
     <value>ಡೀಫಾಲ್ಟ್ ಬಣ್ಣವಾಗಿ ಪ್ರಗತಿಯನ್ನು ಪ್ರದರ್ಶಿಸಿ</value>
   </data>
   <data name="SearchCommandLongDescription" xml:space="preserve">
-    <value>ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಮೂಲಗಳಿಂದ ಪ್ಯಾಕೇಜ್‌ಗಳಿಗಾಗಿ ಶೋಧಿಸುತ್ತದೆ.</value>
+    <value>ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಮೂಲಗಳಿಂದ ಪ್ಯಾಕೇಜ್‍ಗಳಿಗಾಗಿ ಶೋಧಿಸುತ್ತದೆ.</value>
   </data>
   <data name="SearchCommandShortDescription" xml:space="preserve">
     <value>ಪ್ಯಾಕೇಜ್‍ಗಳ ಮೂಲ ಮಾಹಿತಿಯನ್ನು ಹುಡುಕಿ ಮತ್ತು ತೋರಿಸಿ</value>
@@ -460,10 +478,10 @@
     <value>ಚಾನಲ್</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>ನಿರ್ದಿಷ್ಟ ಪ್ಯಾಕೇಜ್‍ನಲ್ಲಿ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆಗಿ, ಪ್ರಶ್ನಾವಳಿಯು ಪ್ಯಾಕೇಜ್‍ನ ಐಡಿ, ಹೆಸರು ಅಥವಾ ಮೋನಿಕರ್ ಗೆ ಹೋಲಿಕೆಯಾಗಬೇಕು. ಇತರ ಕ್ಷೇತ್ರಗಳನ್ನ ಅವುಗಳ ಸೂಕ್ತ ಆಯ್ಕೆಯನ್ನು ಪಾಸ್ ಮಾಡುವ ಮೂಲಕ ಬಳಸಬಹುದು.</value>
+    <value>ನಿರ್ದಿಷ್ಟ ಪ್ಯಾಕೇಜ್‍ನಲ್ಲಿ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆಗಿ, ಪ್ರಶ್ನಾವಳಿಯು ಪ್ಯಾಕೇಜ್‍ನ ಐಡಿ, ಹೆಸರು ಅಥವಾ ಮೊನಿಕರ್‌‍ಗೆ ಹೋಲಿಕೆಯಾಗಬೇಕು. ಇತರ ಕ್ಷೇತ್ರಗಳನ್ನ ಅವುಗಳ ಸೂಕ್ತ ಆಯ್ಕೆಯನ್ನು ಪಾಸ್ ಮಾಡುವ ಮೂಲಕ ಬಳಸಬಹುದು.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>ಒಂದು ಪ್ಯಾಕೇಜ್ ಬಗ್ಗೆ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸುತ್ತದೆ</value>
+    <value>ಪ್ಯಾಕೇಜ್ ಕುರಿತ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸುತ್ತದೆ</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>ಆವೃತ್ತಿ</value>
@@ -520,7 +538,7 @@
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>ಕ್ಷೇತ್ರ</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>ಹೆಸರು</value>
@@ -542,7 +560,7 @@
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>ಎಂದಿಗೂ ಇಲ್ಲ</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>ಮೌಲ್ಯ</value>
@@ -550,6 +568,14 @@
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>ಮೂಲದ ಹೆಸರು</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>ಮೂಲವನ್ನು ತೆರೆಯಲು ವಿಫಲವಾಗಿದೆ; ಸಮಸ್ಯೆ ಯು ಉಳಿದರೆ 'source reset' ಆದೇಶವನ್ನು ಪ್ರಯತ್ನಿಸಿ.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>ಪೂರ್ವನಿರ್ಧರಿತ ಮೂಲವನ್ನು ತೆರೆಯಲು ವಿಫಲವಾಗಿದೆ; ಮತ್ತು winget ನಿರ್ವಹಿಸುವವರಿಗೆ ವರದಿ ಮಾಡಿ.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>ಎಲ್ಲಾ ಮೂಲಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗುತ್ತಿದೆ...</value>
@@ -619,13 +645,26 @@
     <value>ಅನುಮತಿಸಿದ ಮಿತಿಗಿಂತ ವಾದವು ಹೆಚ್ಚು ಸಮಯವನ್ನು ಒದಗಿಸಿದೆ</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಸ್ಥಾಪನೆ ನಡವಳಿಕೆಯ ವಾದವನ್ನು ಒದಗಿಸಲಾಗಿದೆ</value>
+    <value>ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಸ್ಥಾಪನೆ ಜಾರಿಗೊಳಿಸುವಿಕೆಯ ನಡವಳಿಕೆಯ ವಾದವನ್ನು ಒದಗಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>ಆದೇಶವನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸುತ್ತಿರುವಾಗ ಅನಿರೀಕ್ಷಿತ ದೋಷ ಸಂಭವಿಸಿದೆ:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>ಗುರುತಿಸಲಾಗದ ಕಮಾಂಡ್</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>ಲಭ್ಯವಿದ್ದರೆ ಎಲ್ಲಾ ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್‌ಗಳನ್ನು ಇತ್ತೀಚಿನವರೆಗೆ ನವೀಕರಿಸಿ</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>ಯಾವುದೇ ಅನ್ವಯವಾಗುವ ನವೀಕರಣ ವು ಕಂಡುಬಂದಿಲ್ಲ.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್‍‌ಗಳ ಪಟ್ಟಿಯಿಂದ ಅಥವಾ ನೇರವಾಗಿ ಮ್ಯಾನಿಫೆಸ್ಟ್‌ನಿಂದ ಶೋಧಿಸುವ ಮೂಲಕ ಆಯ್ಕೆ ಮಾಡಿದ ಪ್ಯಾಕೇಜ್ ಪರಿಷ್ಕರಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆಗಿ, ಪ್ರಶ್ನಾವಳಿಯು ಪ್ಯಾಕೇಜ್‍‌ನ ಐಡಿ, ಹೆಸರು ಅಥವಾ ಮೋನಿಕರ್‌ನೊಂದಿಗೆೆ ಹೋಲಿಕೆಯಾಗಬೇಕು. ಇತರ ಕ್ಷೇತ್ರಗಳನ್ನ ಅವುಗಳ ಸೂಕ್ತ ಆಯ್ಕೆಯನ್ನು ಪಾಸ್ ಮಾಡುವ ಮೂಲಕ ಬಳಸಬಹುದು.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>ಒದಗಿಸಲಾದ ಪ್ಯಾಕೇಜ್ ಅನ್ನು ನವೀಕರಿಸುತ್ತದೆ</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>ಬಳಕೆ</value>
@@ -654,5 +693,232 @@
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>ಪೂರ್ಣಗೊಳ್ಳುವ ಮೊದಲು ಒದಗಿಸಲಾದ ಮೌಲ್ಯವನ್ನು ವಿನಂತಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>ಯಾವುದೇ ಆವೃತ್ತಿ ಹೋಲಿಕೆಯಾಗಿಲ್ಲ:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>ಕೊಟ್ಟಿರುವ ಮೌಲ್ಯಕ್ಕೆ ಯಾವುದೇ ಮೂಲಗಳು ಹೋಲಿಕೆಯಾಗುವುದಿಲ್ಲ:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಮೂಲಗಳು ಹೀಗಿವೆ:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>ಯಾವುದೇ ಮೂಲಗಳನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸಲಾಗಿಲ್ಲ; 'source add' ಜೊತೆಗಿನ ಒಂದನ್ನು ಸೇರಿಸು ಅಥವಾ 'source reset' ಜೊತೆಗೆ ಡೀಫಾಲ್ಟ್‍ಗಳಿಗೆ ಮರುಹೊಂದಿಸು</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>ಸಿಕ್ಕಿದೆ</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>ಹಾದಿ ಒಂದು ಡೈರೆಕ್ಟರಿ ಆಗಿದೆ</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>ಫೈಲ್ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>ಸ್ಥಳೀಯ ಮ್ಯಾನಿಫೆಸ್ಟ್ ಮತ್ತು ಸರ್ಚ್ ಕ್ವೆರಿ ಆರ್ಗ್‍ಗಳನ್ನು ಒದಗಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>ಲಾಗ್‌ಗಳು</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>ಸ್ಥಾಪಕವನ್ನು ನೀತಿಯ ಮೂಲಕ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>ಭದ್ರತಾ ಪರಿಶೀಲನೆಯಲ್ಲಿ ಸ್ಥಾಪಕವು ವಿಫಲವಾಗಿದೆ</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>ಸ್ಥಾಪಕದಲ್ಲಿ ಸೋಂಕು ಇರುವುದನ್ನು ಒಂದು ಆ್ಯಂಟಿ-ವೈರಸ್ ಉತ್ಪನ್ನವು ವರದಿ ಮಾಡಿದೆ</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>ಮೂಲವನ್ನು ನವೀಕರಿಸುವ ಪ್ರಯತ್ನದಲ್ಲಿ ವಿಫಲವಾಗಿದೆ:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪಿತ ಪ್ಯಾಕೇಜ್‍ಗಳ ಪಟ್ಟಿಯಿಂದ ಅಥವಾ ನೇರವಾಗಿ ಮ್ಯಾನಿಫೆಸ್ಟ್‌ನಿಂದ ಶೋಧಿಸುವ ಮೂಲಕ ಆಯ್ಕೆ ಮಾಡಿದ ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಅಸ್ಥಾಪನೆಗೊಳಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆಗಿ, ಪ್ರಶ್ನಾವಳಿಯು ಪ್ಯಾಕೇಜ್‍ನ ID, ಹೆಸರು ಅಥವಾ ಮೋನಿಕರ್‌ನೊಂದಿಗೆ ಕೇಸ್-ಸೆನ್ಸೆಟಿವ್ ಆಗಿ ಹೋಲಿಕೆಯಾಗಬೇಕು. ಇತರ ಕ್ಷೇತ್ರಗಳನ್ನು ಅವುಗಳ ಸೂಕ್ತ ಆಯ್ಕೆಯನ್ನು ಪಾಸ್ ಮಾಡುವ ಮೂಲಕ ಬಳಸಬಹುದು.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>ನೀಡಲಾದ ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಅಸ್ಥಾಪನೆಗೊಳಿಸುತ್ತದೆ</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>ಪ್ಯಾಕೇಜ್ ಅಸ್ಥಾಪನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>ಯಶಸ್ವಿಯಾಗಿ ಅಸ್ಥಾಪನೆಗೊಳಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>ಈ ಪ್ಯಾಕೇಜ್‌ಗಾಗಿ ಅಸ್ಥಾಪನೆ ಆದೇಶವನ್ನು ಕಂಡುಹಿಡಿಯಲು winget ಗೆ ಸಾಧ್ಯವಿಲ್ಲ. ಬೆಂಬಲಕ್ಕಾಗಿ ದಯವಿಟ್ಟು ಪ್ಯಾಕೇಜ್ ಪ್ರಕಾಶಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>ಅಸ್ಥಾಪನೆಯನ್ನು ಕೈಬಿಡಲಾಗಿದೆ</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>ಅಸ್ಥಾಪಿಸುವುದು ಈ ನಿರ್ಗಮನದ ಕೋಡ್‌ನೊಂದಿಗೆ ವಿಫಲವಾಗಿದೆ:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪನೆಗೊಳಿಸಿದ ಪ್ಯಾಕೇಜ್‍ಗಳ ಪಟ್ಟಿಯನ್ನು ರಫ್ತು ಮಾಡುತ್ತದೆ</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>ಫೈಲ್‍ನಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಲಾಗಿರುವ ಎಲ್ಲ ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ಸ್ಥಾಪಿಸುತ್ತದೆ.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>ಫೈಲ್‍ನಲ್ಲಿ ಎಲ್ಲ ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ಸ್ಥಾಪಿಸುತ್ತದೆ.</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>ಫಲಿತಾಂಶವನ್ನು ಎಲ್ಲಿ ಬರೆಯಬೇಕೊ ಆ ಫೈಲ್</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪನೆಗೊಳಿಸುವ ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ವಿವರಿಸುವ ಫೈಲ್</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>ನಿರ್ದಿಷ್ಟಪಡಿಸಿದ ಮೂಲದಿಂದ ರಫ್ತು ಪ್ಯಾಕೇಜ್‍ಗಳು</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>ಫೈಲ್‍ಗೆ ಸ್ಥಾಪನೆಗೊಳಿಸಿದ ಪ್ಯಾಕೇಜ್‍ಗಳ ಪಟ್ಟಿಯನ್ನು ಬರೆಯುತ್ತದೆ. ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ಆಗಲೂ import ಆದೇಶದೊಂದಿಗೆ ಸ್ಥಾಪನೆಗೊಳಿಸಬಹುದು.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>ಆಮದು ಮಾಡಿದ ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್ ಸ್ಥಾಪನೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>ಆಮದಿಗೆ ಪ್ಯಾಕೇಜ್ ಕಂಡುಬಂದಿಲ್ಲ:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>ಆಮದಿಗೆ ಅಗತ್ಯವಿರುವ ಮೂಲವನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>ಯಾವುದೇ ಮೂಲದಿಂದ ಸ್ಥಾಪನೆಗೊಳಿಸಿದ ಪ್ಯಾಕೇಜ್ ಲಭ್ಯವಿಲ್ಲ:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>ಯಾವುದೇ ಮೂಲದಿಂದ ಪ್ಯಾಕೇಜ್‍ನ ಸ್ಥಾಪಿತ ಆವೃತ್ತಿ ಲಭ್ಯವಿಲ್ಲ:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>ಆಮದು ಫೈಲ್‍ನಲ್ಲಿ ಯಾವುದೇ ಪ್ಯಾಕೇಜ್‍ಗಳು ಕಂಡುಬಂದಿಲ್ಲ</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON ಫೈಲ್ ಮಾನ್ಯವಾಗಿಲ್ಲ</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಈಗಾಗಲೇ ಸ್ಥಾಪಿಸಲಾಗಿದೆ:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>ಅಲಭ್ಯ ಪ್ಯಾಕೇಜ್‍ಗಳನ್ನು ಕಡೆಗಣಿಸು</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>ಪ್ಯಾಕೇಜ್ ಆವೃತ್ತಿಗಳನ್ನು ಉತ್ಪಾದಿಸಿದ ಫೈಲ್‍ನಲ್ಲಿ ಸೇರಿಸಿ</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>ಆಮದು ಫೈಲ್‍ನಿಂದ ಪ್ಯಾಕೇಜ್ ಆವೃತ್ತಿಗಳನ್ನು ಕಡೆಗಣಿಸು</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>ಹಾದಿ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON ಫೈಲ್ ಗುರುತಿಸಲಾದ ಸ್ಕೀಮಾ ನಿರ್ದಿಷ್ಟಪಡಿಸುವುದಿಲ್ಲ.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>ಸ್ಥಾಪನೆ ವ್ಯಾಪ್ತಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ (ಬಳಕೆದಾರ ಅಥವಾ ಯಂತ್ರ)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>'%1' ತರ್ಕಕ್ಕೆ ಒದಗಿಸಿದ ಮೌಲ್ಯವು ಅಮಾನ್ಯವಾಗಿದೆ; ಮಾನ್ಯ ಮೌಲ್ಯಗಳು</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>ಈ ಕಾರ್ಯಾಚರಣೆಯನ್ನು ಸಮೂಹ ನೀತಿಯಿಂದ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>ಹೆಚ್ಚುವರಿ Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್ ಮೂಲಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್‌ ಅನುಮತಿಸಿದ ಮೂಲಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್ ಡೀಫಾಲ್ಟ್ ಮೂಲ ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್ ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್ Microsoft Store ಮೂಲವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Windows ಪ್ಯಾಕೇಜ್ ಮ್ಯಾನೇಜರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Windows ಪ್ಯಾಕೇಜ್ ಮ್ಯಾನೇಜರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>ನಿಮಿಷಗಳ ಅಂತರದಲ್ಲಿ Windows ಪ್ಯಾಕೇಜ್ ಮ್ಯಾನೇಜರ್ ಮೂಲ ಸ್ವಯಂ ಪರಿಷ್ಕರಣೆಯನ್ನು ನಿಗದಿಸಿ</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>ಗುಂಪು ನೀತಿ</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>ಸ್ಥಿತಿ</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್‌ ಸ್ಥಳೀಯ ಮ್ಯಾನಿಫೆಸ್ಟ್ ಫೈಲ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>ಕ್ಷೇತ್ರ:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>ಅಮಾನ್ಯ ಕ್ಷೇತ್ರ ಸ್ವರೂಪ.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>ಅಮಾನ್ಯ ಕ್ಷೇತ್ರ ಮೌಲ್ಯ.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>ಸಮೂಹ ನೀತಿಯಿಂದ ನಿಂದ ಅಮಾನ್ಯ ಸೆಟ್ಟಿಂಗ್.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>ಬ್ಯಾಕಪ್ ಫೈಲ್‌ನಿಂದ ಲೋಡ್ ಮಾಡಿದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>ಫೈಲ್ ಪಾರ್ಸ್‌ ಮಾಡುವಲ್ಲಿ ದೋಷ:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>ಮೌಲ್ಯ:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>ಈ ಮುಂದಿನ ಪ್ರಾಯೋಗಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು ಪ್ರಗತಿಯಲ್ಲಿವೆ.
+ಸಮೂಹ ನೀತಿಯಿಂದಾಗಿ ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>ಇನ್‌ಸ್ಟಾಲರ್ ಹ್ಯಾಶ್ ಹೊಂದಾಣಿಕೆಯಾಗುವುದಿಲ್ಲ.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Windows ಆಪ್‌ ಇನ್‌ಸ್ಟಾಲರ್‌ ಹ್ಯಾಶ್ ಅತಿಕ್ರಮಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>ಸಮೂಹ ನೀತಿಗಾಗಿ JSON ನಂತೆ ಪ್ರಸ್ತುತ ಮೂಲಗಳನ್ನು ರಫ್ತು ಮಾಡಿ.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>ಪ್ರಸ್ತುತ ಮೂಲಗಳನ್ನು ರಫ್ತು ಮಾಡಿ</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>ಹೆಚ್ಚುವರಿ ಮೂಲ</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>ಅನುಮತಿಸಲಾದ ಮೂಲ</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>'%1' ತರ್ಕಕ್ಕೆ ಒದಗಿಸಿದ ಮೌಲ್ಯವು ಅಮಾನ್ಯವಾಗಿದೆ</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

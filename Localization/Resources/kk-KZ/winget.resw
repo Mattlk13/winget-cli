@@ -130,6 +130,10 @@
     <value>Келесі пәрмендер қолжетімді:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Қолжетімді</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Келесі параметрлер қолжетімді:</value>
   </data>
@@ -294,8 +298,9 @@
   <data name="InvalidNameError" xml:space="preserve">
     <value>Ағымдағы пәрмен үшін аргумент аты анықталмады</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Орнатылатын тіл (егер қолдау көрсетілетін болса)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Қолданылатын тіл стандарты (BCP47 пішімі)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Лицензиялық келісім</value>
@@ -303,6 +308,13 @@
   <data name="Links" xml:space="preserve">
     <value>Сілтемелер</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>list пәрменінде жүйеде орнатылған бумалар, сондай-ақ, жаңартудың қолжетімділігі көрсетіледі. Дәл search пәрмені сияқты шығыс көзін сүзу үшін қосымша опциялар берілуі мүмкін.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Орнатылған бумаларды көрсету</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Орнатылатын орын (қолдау көрсетілетін болса)</value>
@@ -341,11 +353,11 @@
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>MSIX қолтаңба хэшін есептеу мүмкін болмады.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Microsoft Store бумасын орнату сәтсіз аяқталды, себебі белгілі бір бағдарлама саясат тарапынан блокталған</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Microsoft Store бумасын орнату немесе жаңарту әрекеті сәтсіз аяқталды, себебі белгілі бір бағдарлама саясат тарапынан блокталған</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Microsoft Store бумасын орнату мүмкін болмады. Қате коды:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Microsoft Store бумасын орнату немесе жаңарту мүмкін болмады. Қате коды:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Буманы алу кезіндегі қатені тексеру/сұрау: желі қатесі</value>
@@ -359,11 +371,14 @@
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Буманы алудың сәтті күйін тексеру/сұрау</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Microsoft Store бумасын орнату сәтсіз аяқталды, себебі Microsoft Store клиенті саясат тарапынан блокталған</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Microsoft Store бумасын орнату немесе жаңарту әрекеті сәтсіз аяқталды, себебі Microsoft Store клиенті саясат тарапынан блокталған</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Буманы алу туралы мәліметтерді тексеру/сұрау...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Енгізілген шарттарға сәйкес келетін бірнеше орнатылған бума табылды. Шарттарды нақтылаңыз.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Кіріс шарттарына сәйкес келетін бірнеше пакет табылды. Кірісті нақтылаңыз.</value>
@@ -372,10 +387,13 @@
     <value>Нәтижелерді аты бойынша сүзгілеу</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Ағымдағы жүйе үшін жарамды орнату құралдары жоқ.</value>
+    <value>Қолданылатын қондырғы табылған жоқ; толығырақ журналдарды қараңыз.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
-    <value>Қазіргі уақытта қолжетімді эксперименттік мүмкіндіктер жоқ.</value>
+    <value>Қазіргі уақытта қолжетімді эксперименттік мүмкіндіктер жоқ. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Енгізілген шарттарға сәйкес келетін ешқандай орнатылған бума табылмады.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Кіріс шарттарына сәйкес келетін ешқандай жиынтық табылмады.</value>
@@ -420,7 +438,7 @@
     <value>Әдепкі түспен орындалу барысын көрсету</value>
   </data>
   <data name="SearchCommandLongDescription" xml:space="preserve">
-    <value>Бумаларды реттелген дерек көздерінен іздейді.</value>
+    <value>Бумаларды конфигурацияланған дерек көздерінен іздейді.</value>
   </data>
   <data name="SearchCommandShortDescription" xml:space="preserve">
     <value>Бумалар туралы негізгі ақпаратты табу және көрсету</value>
@@ -463,7 +481,7 @@
     <value>Белгілі бір бума туралы мәліметтерді көрсетеді. Әдепкі бойынша сұрау буманың идентификаторын, атын немесе моникерін (регистрді ескермей) салыстыруы қажет. Тиісті параметрді көрсету арқылы басқа өрістерді пайдалануға болады.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>Бума туралы ақпаратты көрсетеді</value>
+    <value>Бума туралы мәліметтерді көрсетеді</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>Нұсқа</value>
@@ -520,7 +538,7 @@
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Өріс</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Аты</value>
@@ -542,7 +560,7 @@
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>ешқашан</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Мән</value>
@@ -550,6 +568,14 @@
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Дерек көзінің аты</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Дерек көзін ашу мүмкін болмады; мәселе қайталанса, 'source reset' пәрменін байқап көріңіз.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Алдын ала анықталған дерек көзді ашу мүмкін болмады; winget жөндеу бойынша қызметкерлерге хабарлаңыз.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Барлық көздерді жою...</value>
@@ -619,13 +645,26 @@
     <value>Аргумент рұқсат етілген шамадан көп рет енгізілді</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Орнату кезінде бірнеше аргумент көрсетілді</value>
+    <value>Орындау кезінде бірнеше әрекет аргументі берілген</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Пәрменді орындау кезінде күтпеген қате орын алды:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Пәрмен анықталмады</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Қолжетімді болса, барлық орнатылған бумаларды соңғы нұсқасына жаңарту</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Қолжетімді жаңарту табылмады.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Орнатылған бумалар тізімінен іздеу арқылы немесе манифесттен тікелей табылған, таңдалған буманы жаңартады. Әдепкі бойынша сұрау буманың идентификаторын, атын немесе моникерін (регистрді ескермей) салыстыруы қажет. Тиісті параметрді көрсету арқылы басқа өрістерді пайдалануға болады.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Берілген буманы жаңартады</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>пайдалану</value>
@@ -654,5 +693,232 @@
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Әрекет аяқталмай тұрып енгізілген мән қажет</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Сәйкес келетін нұсқа табылмады:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Берілген мәнге ешқандай дерек көздері сәйкес келмейді:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Конфигурацияланған дерек көздері мыналар:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Дерек көздері анықталмады; 'source add' пәрменімен біреуін қосу және 'source reset' пәрменімен әдепкі мәндеріне келтіру</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Табылғаны</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Жол - каталог:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Файл жоқ:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Жергілікті манифест және іздеу сұрауы аргументі берілген</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Журналдар</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Орнатушы саясат бойынша блокталған</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Орнату құралы қауіпсіздік тексерісінен өте алмады</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Антивирус орнату құралында зиянды бағдарлама бар болғанын анықтады</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Дереккөзді жаңарту әрекеті орындалмады:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Орнатылған бумалар тізімінен іздеу арқылы немесе манифесттен тікелей табылған, таңдалған буманы жояды. Әдепкі бойынша сұрау буманың идентификаторын, атын немесе моникерін (регистрді ескермей) салыстыруы қажет. Тиісті параметрді көрсету арқылы басқа өрістерді пайдалануға болады.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Берілген буманы жояды</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Буманы жою басталды...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Жойылды</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget осы бумаға арналған жою пәрменінің орналасқан жерін таба алмады. Бума жариялаушысына хабарласып, көмек сұраңыз.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Жою әрекеті қараусыз қалды</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Жою әрекеті сәтсіз аяқталды, шығу коды:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Орнатылған бумалар тізімін экспорттайды</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Файлдағы барлық бумаларды орнатады.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Файлдағы барлық бумаларды орнатады</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Нәтиже жазылатын файл</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Орнатылатын бумаларды сипаттайтын файл</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Көрсетілген дереккөзден бумаларды экспорттау</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Орнатылған бумалардың тізімін файлға жазады. Осыдан кейін бумаларды import пәрменімен орнатуға болады.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Бір немесе бірнеше импортталған буманы орнату мүмкін болмады</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Импортталатын бума табылмады:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Импорттау үшін қажетті дереккөз орнатылмаған:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Орнатылған бума кез келген дереккөзден қолжетімді емес:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Буманың орнатылған нұсқасы кез келген дереккөзден қолжетімді емес:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Импорттау файлында бумалар табылмады</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON файлы жарамсыз</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Бума орнатылып қойған:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Қол жеткізгісіз бумаларды елемеу</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Жасалған файлға бума нұсқаларын қосу</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Импорттау файлындағы бума нұсқаларын елемеу</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Мұндай жол жоқ:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON файлы танылған схеманы көрсетпейді.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Орнату ауқымын таңдаңыз (пайдаланушы немесе машина)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>`%1` аргументі үшін берілген мән жарамсыз; жарамды мәндер</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Бұл әрекет Топтық саясатпен ажыратылған</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Қосымша Windows қолданбаларын орнатушы көздерін қосыңыз</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Windows Бағдарлама орнату құралдың Рұқсат етілген ақпарат көзін қосу</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Windows Бағдарлама орнату құралдың Әдепкі ақпарат көзін қосу</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Windows Бағдарлама орнату құралдың Эксперименталды Мүмкіндіктерді қосу</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Microsoft Store көзін Windows App Installer қосыңыз</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Windows бума реттеушісі параметрлерін қосу</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Windows бума реттеушісін қосу</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Windows бума реттеушісі бағдарламасын автоматты түрде жаңарту аралығын минут ішінде орнатыңыз</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Ажыратылған</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Іске қосулы</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Топтық саясат</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Күй</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Windows Бағдарлама орнату құралдың Жергілікті Манифестін қосу</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Өріс:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Өріс форматы жарамсыз.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Жарамсыз өріс мәні.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Топтық саясат параметрі жарамсыз.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Сақтық көшірме файлы жүктелген параметрлер.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Файлды талдау қателігі:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Мән:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Келесі эксперименттік ерекшеліктер орындалуда.
+Конфигурация топтық саясатқа байланысты ажыратылған.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Орнатушының хэші сәйкес келмейді.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Windows Бағдарлама орнату құралдың Хэшті қайта анықтауын қосу</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Ағымдағы дереккөздерді топтық саясат үшін JSON ретінде экспорттаңыз.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Ағымдағы дерек көздерін экспорттау</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Қосымша ақпарат көзі</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Рұқсат етілген ақпарат көзі</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>`%1` аргументі үшін берілген мән жарамсыз</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

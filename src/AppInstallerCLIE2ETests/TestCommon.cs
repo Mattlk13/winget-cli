@@ -7,6 +7,7 @@ namespace AppInstallerCLIE2ETests
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Text;
     using System.Threading;
 
     public class TestCommon
@@ -125,13 +126,16 @@ namespace AppInstallerCLIE2ETests
             }
 
             string workDirectory = GetRandomTestDir();
+            string tempBatchFile = Path.Combine(workDirectory, "Batch.cmd");
             string exitCodeFile = Path.Combine(workDirectory, "ExitCode.txt");
             string stdOutFile = Path.Combine(workDirectory, "StdOut.txt");
             string stdErrFile = Path.Combine(workDirectory, "StdErr.txt");
 
-            cmdCommandPiped += $"{AICLIPath} {command} {parameters} > {stdOutFile} 2> {stdErrFile} & call echo %^ERRORLEVEL% > {exitCodeFile}";
+            // First change the codepage so that the rest of the batch file works
+            cmdCommandPiped += $"chcp 65001\n{AICLIPath} {command} {parameters} > {stdOutFile} 2> {stdErrFile}\necho %ERRORLEVEL% > {exitCodeFile}";
+            File.WriteAllText(tempBatchFile, cmdCommandPiped, new System.Text.UTF8Encoding(false));
 
-            string psCommand = $"Invoke-CommandInDesktopPackage -PackageFamilyName {Constants.AICLIPackageFamilyName} -AppId {Constants.AICLIAppId} -PreventBreakaway -Command cmd.exe -Args '/c \"{cmdCommandPiped}\"'";
+            string psCommand = $"Invoke-CommandInDesktopPackage -PackageFamilyName {Constants.AICLIPackageFamilyName} -AppId {Constants.AICLIAppId} -PreventBreakaway -Command cmd.exe -Args '/c \"{tempBatchFile}\"'";
 
             var psInvokeResult = RunCommandWithResult("powershell", psCommand);
 
@@ -186,7 +190,7 @@ namespace AppInstallerCLIE2ETests
             return result;
         }
 
-        public static bool RunCommand(string fileName, string args, int timeOut = 60000)
+        public static bool RunCommand(string fileName, string args = "", int timeOut = 60000)
         {
             return RunCommandWithResult(fileName, args, timeOut).ExitCode == 0;
         }
@@ -229,11 +233,23 @@ namespace AppInstallerCLIE2ETests
             return GetTestFile(Path.Combine("TestData", fileName));
         }
 
+        public static string GetTestWorkDir()
+        {
+            string workDir = Path.Combine(TestContext.CurrentContext.TestDirectory, "WorkDirectory");
+            Directory.CreateDirectory(workDir);
+            return workDir;
+        }
+
         public static string GetRandomTestDir()
         {
-            string randDir = Path.Combine(TestContext.CurrentContext.TestDirectory, Path.Combine("WorkDirectory", Path.GetRandomFileName()));
+            string randDir = Path.Combine(GetTestWorkDir(), Path.GetRandomFileName());
             Directory.CreateDirectory(randDir);
             return randDir;
+        }
+
+        public static string GetRandomTestFile(string extension)
+        {
+            return Path.Combine(GetTestWorkDir(), Path.GetRandomFileName() + extension);
         }
 
         public static bool InstallMsix(string file)

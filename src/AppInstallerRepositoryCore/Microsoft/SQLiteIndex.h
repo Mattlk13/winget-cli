@@ -8,6 +8,7 @@
 #include <AppInstallerLanguageUtilities.h>
 #include <AppInstallerVersions.h>
 #include <winget/Manifest.h>
+#include <winget/NameNormalization.h>
 
 #include <chrono>
 #include <filesystem>
@@ -38,7 +39,7 @@ namespace AppInstaller::Repository::Microsoft
         SQLiteIndex& operator=(SQLiteIndex&&) = default;
 
         // Creates a new index database of the given version.
-        static SQLiteIndex CreateNew(const std::string& filePath, Schema::Version version);
+        static SQLiteIndex CreateNew(const std::string& filePath, Schema::Version version = Schema::Version::Latest());
 
         // The disposition for opening the index.
         enum class OpenDisposition
@@ -120,6 +121,10 @@ namespace AppInstaller::Repository::Microsoft
 
         // Sets the string for the given metadata and manifest id.
         void SetMetadataByManifestId(IdType manifestId, PackageVersionMetadata metadata, std::string_view value);
+
+        // Normalizes a name using the internal rules used by the index.
+        // Largely a utility function; should not be used to do work on behalf of the index by the caller.
+        Utility::NormalizedName NormalizeName(std::string_view name, std::string_view publisher) const;
 
     private:
         // Constructor used to open an existing index.

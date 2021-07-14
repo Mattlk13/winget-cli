@@ -14,6 +14,15 @@ using namespace AppInstaller::CLI::Workflow;
 
 namespace AppInstaller::CLI
 {
+    namespace
+    {
+        bool ShouldListUpgrade(Context& context)
+        {
+            return context.Args.Empty() ||
+                (context.Args.GetArgsCount() == 1 && context.Args.Contains(Execution::Args::Type::Source));
+        }
+    }
+
     std::vector<Argument> UpgradeCommand::GetArguments() const
     {
         return {
@@ -28,11 +37,10 @@ namespace AppInstaller::CLI
             Argument::ForType(Args::Type::Exact),
             Argument::ForType(Args::Type::Interactive),
             Argument::ForType(Args::Type::Silent),
-            Argument::ForType(Args::Type::Language),
             Argument::ForType(Args::Type::Log),
             Argument::ForType(Args::Type::Override),
             Argument::ForType(Args::Type::InstallLocation),
-            Argument{ "force", Argument::NoAlias, Args::Type::Force, Resource::String::InstallForceArgumentDescription, ArgumentType::Flag },
+            Argument::ForType(Args::Type::HashOverride),
             Argument{ "all", Argument::NoAlias, Args::Type::All, Resource::String::UpdateAllArgumentDescription, ArgumentType::Flag },
         };
     }
@@ -79,12 +87,6 @@ namespace AppInstaller::CLI
             context <<
                 Workflow::CompleteWithSingleSemanticsForValueUsingExistingSource(valueType);
             break;
-        case Execution::Args::Type::Language:
-            // May well move to CompleteWithSingleSemanticsForValue,
-            // but for now output nothing.
-            context <<
-                Workflow::CompleteWithEmptySet;
-            break;
         }
     }
 
@@ -117,15 +119,15 @@ namespace AppInstaller::CLI
 
         context <<
             Workflow::ReportExecutionStage(ExecutionStage::Discovery) <<
-            OpenSource <<
-            OpenCompositeSource(Repository::PredefinedSource::Installed);
+            Workflow::OpenSource <<
+            Workflow::OpenCompositeSource(Repository::PredefinedSource::Installed);
 
-        if (context.Args.Empty())
+        if (ShouldListUpgrade(context))
         {
             // Upgrade with no args list packages with updates available
             context <<
                 Workflow::SearchSourceForMany <<
-                Workflow::EnsureMatchesFromSearchResult <<
+                Workflow::EnsureMatchesFromSearchResult(true) <<
                 Workflow::ReportListResult(true);
         }
         else if (context.Args.Contains(Execution::Args::Type::All))
@@ -133,7 +135,7 @@ namespace AppInstaller::CLI
             // --all switch updates all packages found
             context <<
                 SearchSourceForMany <<
-                EnsureMatchesFromSearchResult <<
+                EnsureMatchesFromSearchResult(true) <<
                 UpdateAllApplicable;
         }
         else if (context.Args.Contains(Execution::Args::Type::Manifest))
@@ -141,38 +143,28 @@ namespace AppInstaller::CLI
             // --manifest case where new manifest is provided
             context <<
                 GetManifestFromArg <<
-                ReportManifestIdentity <<
                 SearchSourceUsingManifest <<
-                EnsureOneMatchFromSearchResult <<
+                EnsureOneMatchFromSearchResult(true) <<
                 GetInstalledPackageVersion <<
                 EnsureUpdateVersionApplicable <<
-                EnsureMinOSVersion <<
                 SelectInstaller <<
                 EnsureApplicableInstaller <<
-                ShowInstallationDisclaimer <<
-                Workflow::ReportExecutionStage(ExecutionStage::Download) <<
-                DownloadInstaller <<
-                Workflow::ReportExecutionStage(ExecutionStage::Execution) <<
-                ExecuteInstaller <<
-                Workflow::ReportExecutionStage(ExecutionStage::PostExecution) <<
-                RemoveInstaller;
+                InstallPackageInstaller;
         }
         else
         {
             // The remaining case: search for single installed package to update
             context <<
                 SearchSourceForSingle <<
-                EnsureOneMatchFromSearchResult <<
-                ReportSearchResultIdentity <<
+                EnsureOneMatchFromSearchResult(true) <<
                 GetInstalledPackageVersion;
 
             if (context.Args.Contains(Execution::Args::Type::Version))
             {
                 // If version specified, use the version and verify applicability
                 context <<
-                    GetManifestFromSearchResult <<
+                    GetManifestFromPackage <<
                     EnsureUpdateVersionApplicable <<
-                    EnsureMinOSVersion <<
                     SelectInstaller <<
                     EnsureApplicableInstaller;
             }
@@ -180,18 +172,10 @@ namespace AppInstaller::CLI
             {
                 // iterate through available versions to find latest applicable update
                 // This step also populates Manifest and Installer in context data
-                context <<
-                    SelectLatestApplicableUpdate(*(context.Get<Execution::Data::SearchResult>().Matches.at(0).Package));
+                context << SelectLatestApplicableUpdate(true);
             }
 
-            context <<
-                ShowInstallationDisclaimer <<
-                Workflow::ReportExecutionStage(ExecutionStage::Download) <<
-                DownloadInstaller <<
-                Workflow::ReportExecutionStage(ExecutionStage::Execution) <<
-                ExecuteInstaller <<
-                Workflow::ReportExecutionStage(ExecutionStage::PostExecution) <<
-                RemoveInstaller;
+            context << InstallPackageInstaller;
         }
     }
 }

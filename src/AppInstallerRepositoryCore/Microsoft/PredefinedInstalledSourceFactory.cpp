@@ -2,10 +2,14 @@
 // Licensed under the MIT License.
 #pragma once
 #include "pch.h"
+#include "Microsoft/ARPHelper.h"
 #include "Microsoft/PredefinedInstalledSourceFactory.h"
 #include "Microsoft/SQLiteIndex.h"
 #include "Microsoft/SQLiteIndexSource.h"
 #include <winget/ManifestInstaller.h>
+
+#include <winget/Registry.h>
+#include <AppInstallerArchitecture.h>
 
 using namespace std::string_literals;
 using namespace std::string_view_literals;
@@ -14,13 +18,6 @@ namespace AppInstaller::Repository::Microsoft
 {
     namespace
     {
-        // Populates the index with the ARP entries from the given root.
-        void PopulateIndexFromARP(SQLiteIndex& index, HKEY rootKey)
-        {
-            UNREFERENCED_PARAMETER(index);
-            UNREFERENCED_PARAMETER(rootKey);
-        }
-
         // Populates the index with the entries from MSIX.
         void PopulateIndexFromMSIX(SQLiteIndex& index)
         {
@@ -36,7 +33,7 @@ namespace AppInstaller::Repository::Microsoft
             // Add one installer for storing the package family name.
             manifest.Installers.emplace_back();
             // Every package will have the same tags currently.
-            manifest.Tags = { "msix" };
+            manifest.DefaultLocalization.Add<Manifest::Localization::Tags>({ "msix" });
 
             // Fields in the index but not populated:
             //  AppMoniker - Not sure what we would put.
@@ -57,11 +54,32 @@ namespace AppInstaller::Repository::Microsoft
                 Utility::NormalizedString familyName = Utility::ConvertToUTF8(packageId.FamilyName());
 
                 manifest.Id = familyName;
-                manifest.Name = Utility::ConvertToUTF8(package.DisplayName());
 
-                if (manifest.Name.empty())
+                bool isPackageNameSet = false;
+                // Attempt to get the DisplayName. Since this will retrieve the localized value, it has a chance to fail.
+                // Rather than completely skip this package in that case, we will simply fall back to using the package name below.
+                try
                 {
-                    manifest.Name = Utility::ConvertToUTF8(packageId.Name());
+                    auto displayName = Utility::ConvertToUTF8(package.DisplayName());
+                    if (!displayName.empty())
+                    {
+                        manifest.DefaultLocalization.Add<Manifest::Localization::PackageName>(displayName);
+                        isPackageNameSet = true;
+                    }
+                }
+                catch (const winrt::hresult_error& hre)
+                {
+                    AICLI_LOG(Repo, Info, << "winrt::hresult_error[0x" << Logging::SetHRFormat << hre.code() << ": " <<
+                        Utility::ConvertToUTF8(hre.message()) << "] exception thrown when getting DisplayName for " << familyName);
+                }
+                catch (...)
+                {
+                    AICLI_LOG(Repo, Info, << "Unknown exception thrown when getting DisplayName for " << familyName);
+                }
+
+                if (!isPackageNameSet)
+                {
+                    manifest.DefaultLocalization.Add<Manifest::Localization::PackageName>(Utility::ConvertToUTF8(packageId.Name()));
                 }
 
                 std::ostringstream strstr;
@@ -76,7 +94,7 @@ namespace AppInstaller::Repository::Microsoft
                 auto manifestId = index.AddManifest(manifest, std::filesystem::path{ packageId.FamilyName().c_str() });
 
                 index.SetMetadataByManifestId(manifestId, PackageVersionMetadata::InstalledType, 
-                    Manifest::ManifestInstaller::InstallerTypeToString(Manifest::ManifestInstaller::InstallerTypeEnum::Msix));
+                    Manifest::InstallerTypeToString(Manifest::InstallerTypeEnum::Msix));
             }
         }
 
@@ -98,14 +116,11 @@ namespace AppInstaller::Repository::Microsoft
                 SQLiteIndex index = SQLiteIndex::CreateNew(SQLITE_MEMORY_DB_CONNECTION_TARGET, Schema::Version::Latest());
 
                 // Put installed packages into the index
-                if (filter == PredefinedInstalledSourceFactory::Filter::None || filter == PredefinedInstalledSourceFactory::Filter::ARP_System)
+                if (filter == PredefinedInstalledSourceFactory::Filter::None || filter == PredefinedInstalledSourceFactory::Filter::ARP)
                 {
-                    PopulateIndexFromARP(index, HKEY_LOCAL_MACHINE);
-                }
-
-                if (filter == PredefinedInstalledSourceFactory::Filter::None || filter == PredefinedInstalledSourceFactory::Filter::ARP_User)
-                {
-                    PopulateIndexFromARP(index, HKEY_CURRENT_USER);
+                    ARPHelper arpHelper;
+                    arpHelper.PopulateIndexFromARP(index, Manifest::ScopeEnum::Machine);
+                    arpHelper.PopulateIndexFromARP(index, Manifest::ScopeEnum::User);
                 }
 
                 if (filter == PredefinedInstalledSourceFactory::Filter::None || filter == PredefinedInstalledSourceFactory::Filter::MSIX)
@@ -116,19 +131,19 @@ namespace AppInstaller::Repository::Microsoft
                 return std::make_shared<SQLiteIndexSource>(details, "*PredefinedInstalledSource", std::move(index), Synchronization::CrossProcessReaderWriteLock{}, true);
             }
 
-            void Add(SourceDetails&, IProgressCallback&) override final
+            bool Add(SourceDetails&, IProgressCallback&) override final
             {
                 // Add should never be needed, as this is predefined.
                 THROW_HR(E_NOTIMPL);
             }
 
-            void Update(const SourceDetails&, IProgressCallback&) override final
+            bool Update(const SourceDetails&, IProgressCallback&) override final
             {
                 // Update could be used later, but not for now.
                 THROW_HR(E_NOTIMPL);
             }
 
-            void Remove(const SourceDetails&, IProgressCallback&) override final
+            bool Remove(const SourceDetails&, IProgressCallback&) override final
             {
                 // Similar to add, remove should never be needed.
                 THROW_HR(E_NOTIMPL);
@@ -142,10 +157,8 @@ namespace AppInstaller::Repository::Microsoft
         {
         case AppInstaller::Repository::Microsoft::PredefinedInstalledSourceFactory::Filter::None:
             return "None"sv;
-        case AppInstaller::Repository::Microsoft::PredefinedInstalledSourceFactory::Filter::ARP_System:
-            return "ARP_System"sv;
-        case AppInstaller::Repository::Microsoft::PredefinedInstalledSourceFactory::Filter::ARP_User:
-            return "ARP_User"sv;
+        case AppInstaller::Repository::Microsoft::PredefinedInstalledSourceFactory::Filter::ARP:
+            return "ARP"sv;
         case AppInstaller::Repository::Microsoft::PredefinedInstalledSourceFactory::Filter::MSIX:
             return "MSIX"sv;
         default:
@@ -155,13 +168,9 @@ namespace AppInstaller::Repository::Microsoft
 
     PredefinedInstalledSourceFactory::Filter PredefinedInstalledSourceFactory::StringToFilter(std::string_view filter)
     {
-        if (filter == FilterToString(Filter::ARP_System))
+        if (filter == FilterToString(Filter::ARP))
         {
-            return Filter::ARP_System;
-        }
-        else if (filter == FilterToString(Filter::ARP_User))
-        {
-            return Filter::ARP_User;
+            return Filter::ARP;
         }
         else if (filter == FilterToString(Filter::MSIX))
         {

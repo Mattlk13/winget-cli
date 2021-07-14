@@ -130,6 +130,10 @@
     <value>Les commandes suivantes sont disponibles :</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Disponible</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Les options suivantes sont disponibles :</value>
   </data>
@@ -240,7 +244,7 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
     <value>Filtrer les résultats par identifiant</value>
   </data>
   <data name="InstallationDisclaimer1" xml:space="preserve">
-    <value>La licence d’utilisation de cette application vous est octroyée pas son propriétaire.</value>
+    <value>La licence d’utilisation de cette application vous est octroyée par son propriétaire.</value>
   </data>
   <data name="InstallationDisclaimer2" xml:space="preserve">
     <value>Microsoft n’est pas responsable des paquets tiers et n’accorde pas de licences à ceux-ci.</value>
@@ -294,8 +298,9 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   <data name="InvalidNameError" xml:space="preserve">
     <value>Le nom de l’argument n’a pas été reconnu pour la commande actuelle</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Langue à installer (si prise en charge)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Paramètre régional à utiliser (format BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Contrat de licence</value>
@@ -303,6 +308,13 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   <data name="Links" xml:space="preserve">
     <value>Liens</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>La list des commandes affiche les paquets installés sur le système et indique si une mise à jour est disponible. Des options supplémentaires sont fournies pour filtrer la sortie, comme pour la commande de search.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Afficher les paquets installés</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Emplacement d’installation (si pris en charge)</value>
@@ -341,11 +353,11 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Impossible de calculer le hachage de la signature MSIX.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Échec de l’installation du paquet Microsoft Store en raison du blocage de l’application précise par la stratégie</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Échec de l’installation ou de la mise à jour du progiciel Microsoft Store en raison du blocage de l’application conformément à la politique en vigueur</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Échec de l’installation du paquet Microsoft Store : réseau Code d’erreur :</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Échec de l’installation ou de la mise à jour du progiciel Microsoft Store. Code d’erreur :</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Échec de la vérification/demande d’acquisition du paquet : erreur réseau</value>
@@ -359,11 +371,14 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Vérification/demande relative à la réussite de l’acquisition du paquet</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Échec de l’installation du paquet Microsoft Store en raison du blocage du client Microsoft Store par la stratégie.</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Échec de l’installation ou de la mise à jour du progiciel Microsoft Store en raison du blocage du client Microsoft Store conformément à la politique en vigueur</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Vérification/demande en cours relative à l’acquisition du paquet...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Plusieurs paquets installés correspondent à vos critères saisis. Veuillez affiner votre recherche.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Plusieurs progiciels correspondent aux critères sélectionnés. Veuillez affiner votre recherche.</value>
@@ -372,10 +387,13 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
     <value>Filtrer les résultats par nom</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Aucun installateur n'est applicable au système actuel.</value>
+    <value>Aucun installeur applicable n’a été trouvé. Pour plus d’informations, consultez les journaux.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Aucune fonctionnalité expérimentale n’est actuellement disponible. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Aucun paquet installé ne correspond aux critères sélectionnés.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Aucun progiciel ne correspond aux critères sélectionnés.</value>
@@ -460,10 +478,10 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
     <value>Canal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Affiche des informations sur un paquet précis. Par défaut, la requête doit correspondre, sans respect de la casse, à l’id, au nom ou au moniker du paquet. D’autres champs peuvent être utilisés en passant leur option appropriée.</value>
+    <value>Affiche des informations sur un paquet précis. Par défaut, la requête doit correspondre, sans respect de la casse, à l’identification, au nom ou au nom du paquet. D’autres champs peuvent être utilisés en passant leur option appropriée.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>Affiche des informations sur un paquet</value>
+    <value>Affiche des renseignements à propos d’un paquet</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>Version</value>
@@ -520,7 +538,7 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Champ</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Nom</value>
@@ -542,7 +560,7 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>jamais</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Valeur</value>
@@ -550,6 +568,14 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Nom de la source</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Impossible d’ouvrir la source; essayez la commande 'source reset' si le problème persiste.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Échec de l’ouverture de la source prédéfinie ; veuillez le signaler aux chargés de maintenance winget.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Suppression de toutes les sources...</value>
@@ -619,13 +645,26 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
     <value>Argument fourni plus de fois que le nombre autorisé</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Plusieurs arguments de comportement d’installation fournis</value>
+    <value>Plusieurs arguments de comportement d’exécution sont fournis</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Une erreur inattendue s'est produite lors de l'exécution de la commande :</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Commande non reconnue</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Mettre à jour tous les paquets installés vers la dernière version si disponible</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Aucune mise à jour applicable trouvée.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Met à jour le paquet sélectionné, trouvé en recherchant les paquets installés ou directement à partir d’un manifeste. Par défaut, la requête doit correspondre, sans respect de la casse, à l’identification, au nom ou au moniker du paquet. D’autres champs peuvent être utilisés en passant leur option appropriée.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Met à jour le paquet donné</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>usage</value>
@@ -654,5 +693,232 @@ Elles peuvent être configurées par le biais du fichier de paramètres "winget 
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>La valeur fournie avant l’achèvement est demandée</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Aucune version correspondante trouvée :</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Aucune source ne correspond à la valeur spécifiée :</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Les sources configurées sont :</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Aucune source définie ; ajoutez-en une avec « source add » ou rétablissez les valeurs par défaut avec « source reset »</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Trouvé</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Le chemin d’accès est un répertoire :</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Le fichier n'existe pas :</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Les arguments du manifeste et de la requête de recherche locaux sont tous les deux fournis</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Journaux</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>L’installeur est bloqué par une politique</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Le programme d’installation a échoué lors de la vérification de sécurité.</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Un produit antivirus signale une infection dans l’installateur</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Échec de la tentative de mise à jour de la source :</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Désinstallation du paquet sélectionné, trouvé en recherchant les paquets installés ou directement à partir d'un manifeste. Par défaut, la requête doit correspondre, sans respect de la casse, à l’identification, au nom ou au moniker du paquet. D’autres champs peuvent être utilisés en passant leur option appropriée.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Désinstallation du paquet donné</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Début de la désinstallation du paquet...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Désinstallé avec succès</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget n’a pas pu localiser la commande de désinstallation pour ce paquet. Veuillez communiquer avec l’éditeur du paquet pour obtenir de l’assistance.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Désinstallation abandonnée</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Échec de la désinstallation avec le code de sortie :</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Exporte une liste des paquets installés</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Installe tous les paquets répertoriés dans un fichier</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Installe tous les paquets dans un fichier</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Fichier dans lequel le résultat doit être écrit</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Fichier décrivant les paquets à installer</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Exporter les paquets à partir de la source spécifiée</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Écrit une liste des paquets installés dans un fichier. Les paquets peuvent ensuite être installés avec la commande d’importation.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Un ou plusieurs paquets importés n’ont pas pu être installés.</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Paquet introuvable pour l’importation :</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>La source requise pour l’importation n’est pas installée :</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Le paquet installé n’est pas disponible à partir d’aucune source :</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>La version installée du paquet n’est pas disponible à partir d’aucune source :</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Aucun paquet n’a été trouvé dans le fichier d’importation.</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>Le fichier JSON n'est pas valide.</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Le paquet est déjà installé :</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Ignorer les paquets non disponibles</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Inclure les versions de paquets dans le fichier généré</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Ignorer les versions de paquets du fichier d’importation</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Le chemin d’accès n’existe pas :</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>Le fichier JSON ne spécifie pas de schéma reconnu.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Sélectionner l’étendue d’installation (utilisateur ou ordinateur)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>La valeur fournie pour l’argument « %1 » n’est pas valide; les valeurs valides sont</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Cette opération est désactivée par la Politique de groupe.</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Activer les sources supplémentaires de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Activer les sources autorisées de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Activer la source par défaut de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Activer les fonctions expérimentales de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Activer la source Microsoft Store du de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Activer les paramètres du Gestionnaire d'ensemble Windows</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Activer le Gestionnaire d'ensemble Windows</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Définir l’intervalle en minutes de la mise à jour automatique source du Gestionnaire d’ensemble Windows</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Désactivé</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Activé</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Politique de groupe</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>État</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Activer les fichiers de manifeste locaux de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Champ :</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Format de champ non valide</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Valeur de champ non valide</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Paramètre non valide de la Politique de groupe</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Paramètres chargés à partir du fichier de sauvegarde.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Erreur lors de l’analyse du fichier :</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Valeur :</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Les fonctions expérimentales suivantes sont en cours.
+La configuration est désactivée en raison de la Politique de groupe.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Le hash de l’installeur ne correspond pas.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Activer le remplacement du hash de l’Installeur d'applications Windows</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Exportez les sources actuelles en tant que JSON pour la Politique de groupe.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Exporter les sources actuelles</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Source supplémentaire</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Source autorisée</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>La valeur fournie pour l’argument « %1 » n’est pas valide.</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

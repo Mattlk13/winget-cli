@@ -5,6 +5,14 @@
 #define NOMINMAX
 #include <windows.h>
 #include <urlmon.h>
+#include <appmodel.h>
+
+#pragma warning( push )
+#pragma warning ( disable : 6001 6340 6388 )
+#include <wil/resource.h>
+#include <wil/result.h>
+#include <wil/result_macros.h>
+#pragma warning( pop )
 
 #include <AppInstallerDateTime.h>
 #include <AppInstallerDeployment.h>
@@ -16,14 +24,14 @@
 #include <AppInstallerSHA256.h>
 #include <AppInstallerStrings.h>
 #include <AppInstallerSynchronization.h>
+#include <AppInstallerTelemetry.h>
 #include <AppInstallerVersions.h>
 #include <winget/ExtensionCatalog.h>
 #include <winget/ExperimentalFeature.h>
+#include <winget/Locale.h>
 #include <winget/Settings.h>
 #include <winget/UserSettings.h>
 #include <winget/Yaml.h>
-
-#include <wil/result_macros.h>
 
 #include <winsqlite/winsqlite3.h>
 
@@ -52,3 +60,10 @@
 #include <tuple>
 #include <type_traits>
 #include <utility>
+
+#pragma warning( push )
+#pragma warning ( disable : 26495 26439 )
+#include <cpprest/http_client.h>
+#include <cpprest/json.h>
+#include <cpprest/uri_builder.h>
+#pragma warning( pop )

@@ -130,6 +130,10 @@
     <value>Dostupne su sljedeće naredbe:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Dostupno</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Dostupne su sljedeće mogućnosti:</value>
   </data>
@@ -243,7 +247,7 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
     <value>Za tu vam je aplikaciju vlasnik dao licencu.</value>
   </data>
   <data name="InstallationDisclaimer2" xml:space="preserve">
-    <value>Microsoft nije odgovoran niti jamči licence paketima trećih strana.</value>
+    <value>Microsoft nije odgovoran za pakete trećih strana niti im daje licence.</value>
   </data>
   <data name="InstallationDisclaimerMSStore" xml:space="preserve">
     <value>Ovaj je paket dostupan u trgovini Microsoft Store. winget će možda morati dohvatiti paket iz trgovine Microsoft Store u ime trenutnog korisnika.</value>
@@ -294,8 +298,9 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   <data name="InvalidNameError" xml:space="preserve">
     <value>Naziv argumenta nije prepoznat za trenutnu naredbu</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Jezik koji treba instalirati (ako je podržano)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Regionalna shema za upotrebu (oblik BCP47)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Licencni ugovor</value>
@@ -303,6 +308,13 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   <data name="Links" xml:space="preserve">
     <value>Veze</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>Naredba list prikazuje pakete instalirane u sustavu, te je li dostupno ažuriranje. Dodatne mogućnosti mogu se navesti za filtriranje izlaza, slično kao naredba za search.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Prikaži instalirane pakete</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Lokacija za instalaciju na (ako je podržano)</value>
@@ -341,11 +353,11 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Izračun raspršivanja potpisa MSIX nije uspio.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Instaliranje paketa iz trgovine Microsoft Store nije uspjelo jer je pravilnik blokirao određenu aplikaciju</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Instaliranje ili ažuriranje paketa iz trgovine Microsoft Store nije uspjelo jer je pravilnik blokirao određenu aplikaciju</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Instaliranje paketa Microsoft Store nije uspjelo. Kôd pogreške:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Instaliranje ili ažuriranje paketa Microsoft Store nije uspjelo. Kôd pogreške:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Provjera/upućivanje zahtjeva za dohvaćanje paketa nije uspjelo: mrežna pogreška</value>
@@ -359,11 +371,14 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Provjera/upućivanje zahtjeva za dohvaćanje paketa je uspjelo</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Instaliranje paketa iz trgovine Microsoft Store nije uspjelo jer je pravilnik blokirao klijenta trgovine Microsoft Store</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Instaliranje ili ažuriranje paketa iz trgovine Microsoft Store nije uspjelo jer je pravilnik blokirao klijenta trgovine Microsoft Store</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Provjera/upućivanje zahtjeva za dohvaćanje paketa...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Pronađeno je više instaliranih paketa koji se podudaraju s ulaznim kriterijima. Suzite ulazne kriterije.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Pronađeno je više paketa koji se podudaraju s ulaznim kriterijima. Suzite ulazne kriterije.</value>
@@ -372,10 +387,13 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
     <value>Filtriraj rezultate po imenu</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Na trenutačni se sustav ne mogu primjenjivati alati za instalaciju aplikacija.</value>
+    <value>Nije pronađen nijedan primjenjive instalacijski program; Dodatne detalje potražite u zapisnicima.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Trenutačno nema dostupnih eksperimentalnih značajki. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Nije pronađen nijedan instalirani paket koji odgovara ulaznim kriterijima.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Nije pronađen nijedan paket koji odgovara ulaznim kriterijima.</value>
@@ -460,10 +478,10 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
     <value>Kanal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Prikazuje informacije o određenom paketu. Prema zadanim postavkama, upit se mora podudarati s ID-om, imenom ili nadimkom paketa, bez razlikovanja velikih i malih slova. Druga se polja mogu koristiti prosljeđivanjem odgovarajuće mogućnosti.</value>
+    <value>Prikazuje informacije o određenom paketu. Prema zadanim postavkama, upit se mora podudarati s ID-jem, imenom ili nadimkom paketa, bez razlikovanja velikih i malih slova. Druga se polja mogu upotrebljavati prosljeđivanjem odgovarajuće mogućnosti.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>Pokazuje informacije o paketu</value>
+    <value>Prikazuje informacije o paketu</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>Verzija</value>
@@ -520,7 +538,7 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Polje</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Naziv</value>
@@ -542,7 +560,7 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>nikad</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Vrijednost</value>
@@ -550,6 +568,14 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Naziv izvora</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Otvaranje izvora nije uspjelo; pokušajte „source reset“ naredbu ako se problem nastavi pojavljivati.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Otvaranje unaprijed definiranog izvora nije uspjelo; prijavite održavateljima wingeta.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Uklanjanje svih izvora...</value>
@@ -619,13 +645,26 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
     <value>Argument je naveden više puta nego što je dopušteno</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Dostupno je više argumenata ponašanja instalacije</value>
+    <value>Dostupno je više argumenata ponašanja izvršavanja</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Prilikom izvršavanja naredbe došlo je do neočekivane pogreške:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Neprepoznata naredba</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Ažuriranje svih instaliranih paketa na najnovije, ako je dostupno</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Nije pronađeno nijedno primjenjivo ažuriranje.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Nadograđuje odabrani paket koji se pronalazi pretraživanjem popisa instaliranih paketa ili izravno iz manifesta. Prema zadanim postavkama, upit se mora podudarati s ID-om, nazivom ili nadimkom paketa, bez razlikovanja velikih i malih slova. Druga se polja mogu koristiti prosljeđivanjem odgovarajuće mogućnosti.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Nadograđuje zadani paket</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>potrošnja</value>
@@ -654,5 +693,232 @@ Mogu se konfigurirati u datoteci postavki „winget settings“.</value>
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Vrijednost navedena prije traženja dovršetka</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Nije pronađena nijedna verzija koja odgovara:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Nijedan izvor ne odgovara navedenoj vrijednosti:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Konfigurirani izvori su:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Nema definiranih izvora; dodajte jedan pomoću „source add“ ili vratite na zadane postavke pomoću „source reset“</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Pronađeno</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Put je direktorij:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Datoteka ne postoji:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Navedeni su i argument lokalnog manifesta i argument upita za pretraživanje</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Zapisnici</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Pravilnik blokira igru</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Instalacijski program nije prošao sigurnosnu provjeru</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Antivirusni proizvod prijavljuje zarazu u instalacijskom programu</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Pokušaj ažuriranja izvora nije uspio:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Deinstalira odabrani paket koji se pronalazi pretraživanjem popisa instaliranih paketa ili izravno iz manifesta. Prema zadanim postavkama, upit se mora podudarati s ID-om, nazivom ili nadimkom paketa, bez razlikovanja velikih i malih slova. Druga se polja mogu koristiti prosljeđivanjem odgovarajuće mogućnosti.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Deinstalira se zadani paket</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Pokretanje instalacije paketa...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Uspješno deinstalirano</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget ne može pronaći naredbu deinstalacije za ovaj paket. Za podršku se obratite izdavaču paketa.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Deinstalacija je odbačena</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Deinstalacija nije uspjela uz izlazni kod:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Izvozi popis instaliranih paketa</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Instalira sve pakete navedene u datoteci.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Instalira sve pakete u datoteku</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Datoteka u kojoj se rezultat treba napisati</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Datoteka s opisom paketa za instalaciju</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Izvoz paketa iz navedenog izvora</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Zapisuje popis instaliranih paketa u datoteku. Pakete zatim možete instalirati s pomoću naredbe za import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Instalacija jednog ili više uvezenih paketa nije uspjela</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Paket nije pronađen za uvoz:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Izvor potreban za uvoz nije instaliran:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Instalirani paket nije dostupan ni iz kojeg izvora:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Instalirana verzija paketa nije dostupna ni iz kojeg izvora:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>U datoteci za uvoz nije pronađen paket</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON datoteka nije valjana</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Paket je već instaliran:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Zanemarivanje nedostupnih paketa</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Uvrsti verzije paketa u proizvedenu datoteku</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Zanemarivanje verzija paketa iz datoteke za uvoz</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Put ne postoji:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON datoteka ne određuje prepoznatu shemu.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Odabir opsega instalacije (korisnik ili računalo)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Vrijednost navedena za argument "%1" nije valjana; valjane su vrijednosti</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Ta je operacija onemogućena pravilnikom grupe</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Omogućivanje dodatnih izvora programa za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Omogućivanje dopuštenih izvora za alat za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Omogućivanje zadanog izvora programa alata za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Omogućivanje pokusnih značajki alata za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Omogućivanje izvora trgovine Microsoft Store za alat za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Omogućivanje postavki upravitelja Windows Package Manager</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Omogućivanje upravitelja Windows Package Manager</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Postavljanje intervala automatskog ažuriranja izvora upravitelja Windows Package Manager u nekoliko minuta</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Onemogućeno</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Omogućeno</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Pravilnik grupe</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Županija</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Omogućivanje datoteka lokalnih manifesta za alat za instalaciju aplikacija sustava Windows</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Polje:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Oblik polja koji nije valjan.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Vrijednost polja nije valjana.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Nevažeća postavka iz pravilnika grupe.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Učitane postavke iz sigurnosne kopije.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Pogreška pri raščlanjivanju datoteke:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Vrijednost:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>U tijeku su sljedeće pokusne značajke.
+Konfiguracija je onemogućena zbog pravilnika grupe.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Instalacijski paket se ne podudara.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Omogućivanje nadjačavanja značajke Hash Installer za aplikacije sustava Windows</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Izvoz trenutačnih izvora kao JSON za pravilnik grupe.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Izvoz trenutačnih izvora</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Dodatni izvor</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Dopušteni izvor</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Vrijednost navedena za argument "%1" nije valjana</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

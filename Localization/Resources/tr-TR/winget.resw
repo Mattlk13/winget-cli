@@ -130,6 +130,10 @@
     <value>Şu komutlar kullanılabilir:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Kullanılabilir</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Şu seçenekler kullanılabilir:</value>
   </data>
@@ -294,8 +298,9 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   <data name="InvalidNameError" xml:space="preserve">
     <value>Geçerli komut için bağımsız değişken adı tanınmadı</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Yüklenecek dil (destekleniyorsa)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Kullanılacak yerel ayar (BCP47 biçimi)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Lisans Sözleşmesi</value>
@@ -303,6 +308,13 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   <data name="Links" xml:space="preserve">
     <value>Bağlantılar</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>Bu list komutu sistemde yüklü paketlerin yanı sıra güncelleştirme olup olmadığı görüntüler. Çıkışı filtrelemek için search komutuna benzer ek seçenekler sağlanabilir.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Yüklü paketleri görüntüleyin</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Yüklenecek konum (destekleniyorsa)</value>
@@ -341,11 +353,11 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>MSIX imza karması hesaplanamadı.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Belirli bir uygulama ilke tarafından engellendiği için Microsoft Store paketi yüklenemedi</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Belirli uygulama ilke tarafından engellendiği için Microsoft Store paketi yüklenemedi veya güncelleştirilemedi</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Microsoft Store paketi yüklenemedi. Hata kodu:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Microsoft Store paketi yüklenemedi veya güncelleştirilemedi. Hata kodu:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Paket alımı doğrulama/isteme başarısız oldu: ağ hatası</value>
@@ -359,11 +371,14 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Paket alımı doğrulama/isteme başarılı</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Microsoft Store istemcisi ilke tarafından engellendiği için Microsoft Store paketi yüklenemedi</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Microsoft Store istemcisi ilke tarafından engellendiği için Microsoft Store paketi yüklenemedi veya güncelleştirilemedi</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Paket alımı doğrulama/isteme...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Birden çok yüklü paket, giriş ölçütleriyle eşleşen bir şekilde bulundu. Lütfen girişi daraltın.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Birden çok paket, giriş ölçütleriyle eşleşen bulundu. Lütfen girişi daraltın.</value>
@@ -372,10 +387,13 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
     <value>Sonuçları ada göre filtreleme ölçütü:</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Geçerli sisteme uygulanabilen yükleyici yok.</value>
+    <value>Uygun yükleyici bulunamadı; daha fazla ayrıntı için günlüğe bakın.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Şu anda kullanılabilir deneysel özellik yok. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Giriş ölçütleriyle eşleşen yüklü paket bulunamadı.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Giriş ölçütleriyle eşleşen paket bulunamadı.</value>
@@ -460,10 +478,10 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
     <value>Kanal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Belirli bir paketteki bilgileri gösterir. Varsayılan olarak, sorgunun büyük/küçük harfe duyarlı olmaması durumunda, paketin kimliği, adı veya adıyla eşleşmesi gerekir. Diğer alanlar uygun seçeneklerden geçirilerek kullanılabilir.</value>
+    <value>Belirli bir paketteki bilgileri gösterir. Varsayılan olarak, sorgunun büyük/küçük harf insensitively 'i paketin kimliği, adı veya adıyla eşleşmesi gerekir. Diğer alanlar, uygun seçenekleri geçirerek kullanılabilir.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
-    <value>Bir paketle ilgili bilgileri gösterir</value>
+    <value>Paket hakkındaki bilgileri gösterir</value>
   </data>
   <data name="ShowVersion" xml:space="preserve">
     <value>Sürüm</value>
@@ -520,7 +538,7 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Alan</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Ad</value>
@@ -542,7 +560,7 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>hiçbir zaman</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Değer</value>
@@ -550,6 +568,14 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Kaynak adı</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Kaynak açılamadı; sorun devam ederse ‘source reset’ komutunu deneyin.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Önceden tanımlanmış kaynak açılamadı; Lütfen winget sürdürülebilir bildirin.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Tüm kaynaklar kaldırılıyor...</value>
@@ -619,13 +645,26 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
     <value>İzin verilenden daha fazla sayıda bağımsız değişken sağlandı</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Birden fazla yükleme davranışı bağımsız değişkeni sağlandı</value>
+    <value>Birden fazla yürütme davranışı bağımsız değişkeni sağlandı</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Komut yürütülürken beklenmeyen bir hata oluştu:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Tanınmayan komut</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Tüm yüklü paketleri varsa en son sürüme güncelleştirin</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Uygulanabilir güncelleştirme bulunamadı.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Yüklü paketler listesinde arama yapılarak bulunan veya doğrudan bir bildirimde yer alan seçili paketi yükseltir. Varsayılan olarak, sorgu paketin kimliğiyle, adıyla veya bilinen adıyla büyük/küçük harfe duyarlı olmadan eşleşmelidir. Diğer alanlar uygun seçenekleri aktarılarak kullanılabilir.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Belirtilen paketi yükseltir</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>kullanım</value>
@@ -654,5 +693,232 @@ Bunlar 'winget settings' ayarlar dosyası aracılığıyla yapılandırılabilir
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Tamamlama istenmeden önce sağlanan değer</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Eşleşen sürüm bulunamadı:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Verilen değerle eşleşen kaynak yok:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Yapılandırılmış kaynaklar şunlardır:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Tanımlanmış kaynak yok; ‘source add’ ile bir kaynak ekleyin veya ‘source reset’ ile varsayılanlara sıfırlayın</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Bulundu</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Yol bir dizindir:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Dosya yok:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Hem yerel bildirim hem de arama sorgusu bağımsız değişkenleri sağlandı</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Günlükler</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Yükleyici ilke tarafından engellendi</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Yükleyici güvenlik kontrolünden geçemedi</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Bir virüsten koruma ürünü yükleyicide bulaşma olduğunu bildiriyor</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Kaynağı güncelleştirme denemesi başarısız oldu:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Yüklü paketler listesi aranarak bulunan veya doğrudan bir bildirimdeki seçili paketi kaldırır. Varsayılan olarak, sorgu, paketin kimliğiyle, adıyla veya bilinen adıyla büyük/küçük harfe duyarlı olmadan eşleşmelidir. Diğer alanlar uygun seçenekleri aktarılarak kullanılabilir.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Belirtilen paketi kaldırır</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Paket kaldırma başlatılıyor...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Başarıyla kaldırıldı</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget bu paket için kaldırma komutunu bulamıyor. Lütfen destek için paket yayımcısı ile iletişim kurun.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Kaldırma yarıda bırakıldı</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Kaldırma şu çıkış koduyla başarısız oldu:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Yüklü paketlerin listesini dışarı aktarır</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Bir dosyada listelenen tüm paketleri yükler.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Bir dosyadaki tüm paketleri yükler</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Sonucun yazılacağı dosya</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Yüklenecek paketleri açıklayan dosya</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Paketleri belirtilen kaynaktan dışarı aktarın</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Yüklü paketlerin listesini bir dosyaya yazar. Bunun üzerine paketler import komutuyla yüklenebilir.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Bir veya daha fazla içeri aktarılan paket yüklenemedi</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>İçeri aktarılacak paket bulunamadı:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>İçeri aktarma için gerekli kaynak yüklü değil:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Yüklü paket hiçbir kaynaktan alınamıyor:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Yüklü paket sürümü hiçbir kaynaktan alınamıyor:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>İçeri aktarma dosyasında paket bulunamadı</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON dosyası geçerli değil</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Paket zaten yüklü:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Kullanılamayan paketleri yoksayın</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Paket sürümlerini oluşturulan dosyaya ekleyin</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>İçeri aktarma dosyasındaki paket sürümlerini yoksayın</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Yol yok:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON dosyası tanınan bir şema belirtmiyor.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Yükleme kapsamını seçin (kullanıcı veya makine)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>'%1' bağımsız değişkeni için sağlanan değer geçersiz; geçerli değerler</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Bu işlem Grup İlkesi tarafından devre dışı bırakıldı</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Ek Windows Uygulama Yükleyicisi Kaynaklarını Etkinleştir</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi İzin Verilerin Kaynaklarını Etkinleştir</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi Varsayılan Kaynağını Etkinleştir</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi Deneysel Özelliklerini Etkinleştir</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi Microsoft Store Kaynağını Etkinleştir</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Windows Paket Yöneticisi Ayarlarını Etkinleştir</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Windows Paket Yöneticisi’ni Etkinleştir</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Windows Package Manager kaynak otomatik güncelleştirme aralığını dakika olarak ayarla</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Devre dışı</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Etkin</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Grup İlkesi</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Durum</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi Yerel Bildirim Dosyalarını Etkinleştir</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Alan:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Geçersiz alan biçimi.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Geçersiz alan değeri.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Grup İlkesinden geçersiz ayar.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Ayarlar yedeklemede dosyasından yüklendi.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Dosya ayrıştırılırken hata oluştu:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Değer:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Aşağıdaki deneysel Özellikler devam ediyor.
+Grup Ilkesi nedeniyle yapılandırma devre dışı bırakıldı.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Yükleyici karması eşleşmiyor.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Windows Uygulama Yükleyicisi Karmasını Geçersiz Kılmayı Etkinleştir</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Grup Ilkesi için geçerli kaynakları JSON olarak dışarı aktarın.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Geçerli kaynakları dışarı aktarın</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Ek kaynak</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>İzin verilen kaynak</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>'%1' bağımsız değişkeni için sağlanan değer geçersiz</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

@@ -130,6 +130,10 @@
     <value>Saadaval on järgmised käsud:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Saadaval</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Saadaval on järgmised variandid:</value>
   </data>
@@ -294,8 +298,9 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   <data name="InvalidNameError" xml:space="preserve">
     <value>Argumendi nime pole praeguse käsu jaoks tuvastatud</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Installitav keel (kui seda toetatakse)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Lokaat kasutamiseks (BCP47 vorming)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Litsentsileping</value>
@@ -303,6 +308,13 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   <data name="Links" xml:space="preserve">
     <value>Lingid</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>Käsk „list“ kuvab süsteemi installitud pakette ja seda, kas värskendus on saadaval. Pakutakse ka lisavõimalusi väljundi filtreerimiseks, nt nagu käsu „search“ puhul.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Kuva installitud paketid</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Installimise asukoht (kui seda toetatakse)</value>
@@ -341,11 +353,11 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>MSIX-allkirja räsi ei saanud arvutada.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Microsoft Store’i paketi installimine ebaõnnestus, kuna konkreetne rakendus on poliitika poolt blokeeritud</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Microsoft Store’i paketi installimine või värskendamine nurjus, kuna poliitika on konkreetse rakenduse blokeerinud</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Microsoft Store’i paketi installimine ebaõnnestus. Tõrkekood:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Microsoft Store’i paketi installimine või värskendamine nurjus. Tõrkekood:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Paketi hankimise kinnitamine/taotlemine ebaõnnestus: võrgu viga</value>
@@ -359,11 +371,14 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Paketi hankimise kinnitamise/taotlemise õnnestumine</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Microsoft Store’i paketi installimine ebaõnnestus, kuna Microsoft Store’i klient on poliitika poolt blokeeritud</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Microsoft Store’i paketi installimine või värskendamine nurjus, kuna poliitika on Microsoft Store’i kliendi blokeerinud</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Paketi hankimise kinnitamine/taotlemine …</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Leiti mitu sisestuskriteeriumitele vastavat installitud paketti. Täpsustage sisendit.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Leiti mitu sisestuskriteeriumitele vastavat paketti. Täpsustage sisendit.</value>
@@ -372,10 +387,13 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
     <value>Saate tulemeid nime järgi filtreerida</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Praeguse süsteemi jaoks asjakohaseid installereid ei ole.</value>
+    <value>Sobivat installerit ei leitud; üksikasjad leiate logist.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
-    <value>Hetkel pole saadaval ühtegi katsetatavat funktsiooni. </value>
+    <value>Praegu pole saadaval ühtegi katsetatavat funktsiooni. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Ühtegi sisestuskriteeriumitele vastavat installitud paketti ei leitud.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Ühtegi sisestuskriteeriumitele vastavat paketti ei leitud.</value>
@@ -460,7 +478,7 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
     <value>Kanal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Kuvab kindlas paketis sisalduva teabe. Vaikimisi peab päring ilma tõstutundlikkuseta ühtima id, nime või paketi hüüdnimega. Teisi välju saab kasutada nende vastava valiku edastamisel.</value>
+    <value>Kuvab kindlas paketis sisalduva teabe. Vaikimisi peab päring ilma tõstutundlikkuseta ühtima ID, nime või paketi hüüdnimega. Teisi välju saab kasutada nende vastava valiku edastamisel.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Kuvab paketi kohta teavet</value>
@@ -520,7 +538,7 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Väli</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Nimi</value>
@@ -542,7 +560,7 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>mitte kunagi</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Väärtus</value>
@@ -550,6 +568,14 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Allika nimi</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Allika avamine nurjus; kui probleem ei lahene, proovige valikut „source reset“.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Eeldefineeritud allika avamine nurjus; andke sellest teada wingeti hooldajatele.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Kõigi allikate eemaldamine …</value>
@@ -619,13 +645,26 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
     <value>Argument on esitatud lubatust rohkem kordi</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Esitatud on rohkem kui üks installikäitumise argument</value>
+    <value>Esitatud on rohkem kui üks käivitamiskäitumise argument</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Käsu täitmisel ilmnes ootamatu tõrge:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Tundmatu käsk</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Võimaluse korral saate kõik paketid värskendada uusimale versioonile</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Ühtegi kohaldatavat värskendust ei leitud.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Täiendab valitud paketi, mis leitakse kas installitud pakettide loendist või otse manifestist otsides. Vaikimisi peab päring ilma tõstutundlikkuseta ühtima ID, nime või paketi hüüdnimega. Teisi välju saab kasutada nende vastava valiku edastamisel.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Täiendab antud paketi</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>kasutus</value>
@@ -654,5 +693,232 @@ Sätteid saab konfigureerida sätete faili winget settings kaudu.</value>
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Taotletud on enne lõpetamist esitatud väärtus</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Ühtegi versiooni ei leitud tingimustele:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Ükski allikas ei vasta antud väärtusele:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>Konfigureeritud allikad on:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Allikaid pole määratletud; lisage üks, kasutades valikut „source add“, või lähtestage vaikesätted, kasutades valikut „source reset“</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Leitud</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Tee on kataloog:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Faili pole olemas:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Kohalik manifest ja otsingupäringu argumendid on esitatud</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logid</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Poliitika on installeri blokeerinud</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Installeri turbekontroll nurjus</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Viirusetõrjetoode annab teada, et installeris on viirus</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Allika värskendamise katse nurjus:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Desinstallib valitud paketi, mis leitakse kas installitud pakettide loendist või otse manifestist otsides. Vaikimisi peab päring ilma tõstutundlikkuseta ühtima ID, nime või paketi hüüdnimega. Teisi välju saab kasutada nende vastava valiku edastamisel.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Antud pakett desinstallitakse</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Paketi deinstallimise käivitamine...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Desinstallitud</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget ei leia selle paketi koha desinstallimise käsku. Pöörduge abi saamiseks paketi väljaandja poole.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Desinstallimine on hüljatud</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Desinstallimine nurjus, väljumiskood:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Installitud pakettide loendi installimine</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Kõikide failis loetletud pakettide installimine.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Kõikide faili pakettide installimine</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Fail, kuhu tuleb kirjutada tulem</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Fail, mis kirjeldab installimiseks valitud pakette</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Pakettide eksportimine määratud allikast</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Kirjutab faili installitud pakettide loendi. Seejärel saab pakette installida käsuga import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Ühe või mitme imporditud paketi installimine nurjus</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Ei leitud paketti importimiseks:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Importimiseks vajalik allikas on installimata:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Installitud pakett pole ühestki allikast saadaval:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Installitud paketi versioon pole saadaval ühestki allikast:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Impordifailist ei leitud ühtegi paketti</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON-i fail on sobimatu</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Keel on juba installitud:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Ignoreeri mittekättesaadavaid pakette</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Paketiversioonide kaasamine loodud failile</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Ignoreeri imporditava faili paketi versioone</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Rada puudub:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON-fail ei määra tuvastatud skeemi.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Valige installiulatus (kasutaja või arvuti)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Argumendis "%1" esitatud väärtus ei sobi; lubatud väärtused on</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>See toiming on rühmapoliitikaga keelatud</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Luba täiendavad Windowsi rakenduseinstalleri allikad</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri lubatud allikad</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri vaikeallikas</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri katsefunktsioonid</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri Microsoft Store‘i allikas</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Luba Windowsi paketihalduri sätted</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Luba Windowsi paketihaldur</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Määra Windowsi paketihalduri allikate automaatse värskendamise intervall minutites</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Keelatud</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Lubatud</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Rühmapoliitika</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Olek</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri kohaliku manifesti failid</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Väli:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Väljavorming ei sobi.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Väljaväärtus ei sobi.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Rühmapoliitika säte ei sobi.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Sätted laaditi varufailist</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Tõrge faili sõelumisel:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Väärtus:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Järgmised eksperimentaalsed funktsioonid on pooleli.
+Konfiguratsioon on rühmapoliitika tõttu keelatud.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Installeri räsiväärtused ei ühti.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Luba Windowsi rakenduseinstalleri räsi alistamine</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Praegused allikad eksporditakse rühmapoliitika jaoks JSON-vormingus.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Eksporditakse praegused allikad</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Täiendav allikas</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Lubatud allikas</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Argumendis "%1" esitatud väärtus ei sobi</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

@@ -130,6 +130,10 @@
     <value>Følgende kommandoer er tilgjengelige:</value>
     <comment>Commands the tool supports</comment>
   </data>
+  <data name="AvailableHeader" xml:space="preserve">
+    <value>Tilgjengelige</value>
+    <comment>As in "a new version is available to update to".</comment>
+  </data>
   <data name="AvailableOptions" xml:space="preserve">
     <value>Følgende alternativer er tilgjengelige:</value>
   </data>
@@ -294,8 +298,9 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   <data name="InvalidNameError" xml:space="preserve">
     <value>Argumentnavnet ble ikke gjenkjent for gjeldende kommando</value>
   </data>
-  <data name="LanguageArgumentDescription" xml:space="preserve">
-    <value>Språk som skal installeres (hvis det støttes)</value>
+  <data name="LocaleArgumentDescription" xml:space="preserve">
+    <value>Lokaliser for bruk (BCP47 format)</value>
+    <comment>{Locked="BCP47"}</comment>
   </data>
   <data name="LicenseAgreement" xml:space="preserve">
     <value>Lisensavtale</value>
@@ -303,6 +308,13 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   <data name="Links" xml:space="preserve">
     <value>Koblinger</value>
     <comment>Links to different webpages</comment>
+  </data>
+  <data name="ListCommandLongDescription" xml:space="preserve">
+    <value>list-kommandoen viser pakkene som er installert på systemet, samt om en oppdatering er tilgjengelig. Ytterligere alternativer kan gis for å filtrere utdata, omtrent som search-kommandoen.</value>
+    <comment>{Locked="list","search"}</comment>
+  </data>
+  <data name="ListCommandShortDescription" xml:space="preserve">
+    <value>Vis installerte pakker</value>
   </data>
   <data name="LocationArgumentDescription" xml:space="preserve">
     <value>Plassering for installasjon (hvis det støttes)</value>
@@ -341,11 +353,11 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   <data name="MsixSignatureHashFailed" xml:space="preserve">
     <value>Kan ikke beregne hash for MSIX-signatur.</value>
   </data>
-  <data name="MSStoreInstallAppBlocked" xml:space="preserve">
-    <value>Kan ikke installere Microsoft Store-pakken fordi den bestemte appen er blokkert av policy</value>
+  <data name="MSStoreAppBlocked" xml:space="preserve">
+    <value>Kan ikke installere eller oppdatere Microsoft Store-pakken da den bestemte appen er blokkert av policy</value>
   </data>
-  <data name="MSStoreInstallFailed" xml:space="preserve">
-    <value>Kunne ikke installere Microsoft Store-pakke. Feilkode:</value>
+  <data name="MSStoreInstallOrUpdateFailed" xml:space="preserve">
+    <value>Kunne ikke installere eller oppdatere Microsoft Store-pakke. Feilkode:</value>
   </data>
   <data name="MSStoreInstallGetEntitlementNetworkError" xml:space="preserve">
     <value>Verifisering/forespørsel om pakkehenting mislyktes: nettverks feil</value>
@@ -359,11 +371,14 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   <data name="MSStoreInstallGetEntitlementSuccess" xml:space="preserve">
     <value>Verifiserering/spørring om pakkehenting er fullført</value>
   </data>
-  <data name="MSStoreInstallStoreClientBlocked" xml:space="preserve">
-    <value>Kunne ikke installere Microsoft Store-pakken fordi Microsoft Store-klienten er blokkert av policy</value>
+  <data name="MSStoreStoreClientBlocked" xml:space="preserve">
+    <value>Kan ikke installere eller oppdagere Microsoft Store-pakken da Microsoft Store-klienten er blokkert av policy</value>
   </data>
   <data name="MSStoreInstallTryGetEntitlement" xml:space="preserve">
     <value>Kontrollerer/ber om pakkeinnhenting...</value>
+  </data>
+  <data name="MultipleInstalledPackagesFound" xml:space="preserve">
+    <value>Flere installerte pakker funnet samsvarende med inndatakriterier. Vennligst finpuss inndataene.</value>
   </data>
   <data name="MultiplePackagesFound" xml:space="preserve">
     <value>Fant flere pakker som samsvarer med inndata-kriteriene. Begrens inndataene.</value>
@@ -372,10 +387,13 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
     <value>Filtrer resultater etter navn</value>
   </data>
   <data name="NoApplicableInstallers" xml:space="preserve">
-    <value>Ingen installasjonsprogrammer gjelder for det gjeldende systemet.</value>
+    <value>Finner ingen gjeldende installasjons program. Se loggene for mer informasjon.</value>
   </data>
   <data name="NoExperimentalFeaturesMessage" xml:space="preserve">
     <value>Det er for øyeblikket ingen tilgjengelige eksperimentelle funksjoner. </value>
+  </data>
+  <data name="NoInstalledPackageFound" xml:space="preserve">
+    <value>Ingen installert pakke funnet som samsvarer med inndatakriteriene.</value>
   </data>
   <data name="NoPackageFound" xml:space="preserve">
     <value>Finner ingen pakke som samsvarer med inndata-kriteriene.</value>
@@ -460,7 +478,7 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
     <value>Kanal</value>
   </data>
   <data name="ShowCommandLongDescription" xml:space="preserve">
-    <value>Viser informasjon om en bestemt pakke. Spørringen må som standard skille mellom små og store bokstaver, og matche ID, navn eller kallenavn for pakken. Andre felt kan brukes ved å sende riktig alternativ.</value>
+    <value>Viser informasjon om en bestemt pakke. Spørringen må som standard skille mellom små og store bokstaver mellom ID, navn eller kalle navn for pakken. Andre felt kan brukes ved å sende riktig alternativ.</value>
   </data>
   <data name="ShowCommandShortDescription" xml:space="preserve">
     <value>Viser informasjon om en pakke</value>
@@ -520,7 +538,7 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   </data>
   <data name="SourceListField" xml:space="preserve">
     <value>Felt</value>
-    <comment>The name of a peice of information about a source.</comment>
+    <comment>The name of a piece of information about a source.</comment>
   </data>
   <data name="SourceListName" xml:space="preserve">
     <value>Navn</value>
@@ -542,7 +560,7 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   </data>
   <data name="SourceListUpdatedNever" xml:space="preserve">
     <value>aldri</value>
-    <comment>The soure has never been updated.</comment>
+    <comment>The source has never been updated.</comment>
   </data>
   <data name="SourceListValue" xml:space="preserve">
     <value>Verdi</value>
@@ -550,6 +568,14 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   </data>
   <data name="SourceNameArgumentDescription" xml:space="preserve">
     <value>Navn på kilden</value>
+  </data>
+  <data name="SourceOpenFailedSuggestion" xml:space="preserve">
+    <value>Kunne ikke åpne kilden; prøv kommandoen 'source reset' hvis problemet vedvarer.</value>
+    <comment>{Locked="source reset"}</comment>
+  </data>
+  <data name="SourceOpenPredefinedFailedSuggestion" xml:space="preserve">
+    <value>Kan ikke åpne den forhånds definerte kilden. rapporter til winget vedlikehold.</value>
+    <comment>{Locked="winget"}</comment>
   </data>
   <data name="SourceRemoveAll" xml:space="preserve">
     <value>Fjerner alle kilder...</value>
@@ -619,13 +645,26 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
     <value>Argumentet er angitt flere ganger enn tillatt</value>
   </data>
   <data name="TooManyBehaviorsError" xml:space="preserve">
-    <value>Mer enn ett-argument for installasjonsatferd er angitt</value>
+    <value>Mer enn ett argument for utførelsesatferd er angitt</value>
   </data>
   <data name="UnexpectedErrorExecutingCommand" xml:space="preserve">
     <value>Det oppstod en uventet feil under utføring av kommandoen:</value>
   </data>
   <data name="UnrecognizedCommand" xml:space="preserve">
     <value>Ukjent kommando</value>
+  </data>
+  <data name="UpdateAllArgumentDescription" xml:space="preserve">
+    <value>Oppdater alle installerte pakker til senest hvis tilgjengelige</value>
+  </data>
+  <data name="UpdateNotApplicable" xml:space="preserve">
+    <value>Ingen relevant oppdatering funnet.</value>
+  </data>
+  <data name="UpgradeCommandLongDescription" xml:space="preserve">
+    <value>Oppgraderer den valgte pakken, enten funnet ved å søke i listen over installerte pakker eller direkte fra et manifest. Som standard må spørringen skille mellom store og små bokstaver i ID, navn eller navn på pakken. Andre felt kan brukes ved å angi riktig alternativ.</value>
+    <comment>id, name, and moniker are all named values in our context, and may benefit from not being translated.</comment>
+  </data>
+  <data name="UpgradeCommandShortDescription" xml:space="preserve">
+    <value>Oppdaterer den gitte pakken</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>bruk</value>
@@ -654,5 +693,232 @@ De kan konfigureres via innstillings filen 'winget settings'.</value>
   </data>
   <data name="WordArgumentDescription" xml:space="preserve">
     <value>Verdien som er angitt før fullføring er forespurt</value>
+  </data>
+  <data name="GetManifestResultVersionNotFound" xml:space="preserve">
+    <value>Ingen versjon funnet som samsvarer:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatch" xml:space="preserve">
+    <value>Ingen kilder samsvarer med den gitte verdien:</value>
+  </data>
+  <data name="OpenSourceFailedNoMatchHelp" xml:space="preserve">
+    <value>De konfigurerte kildene er:</value>
+  </data>
+  <data name="OpenSourceFailedNoSourceDefined" xml:space="preserve">
+    <value>Ingen kilder definert; legg til en med 'source add' eller reset til standardinnstillinger med 'source reset'</value>
+    <comment>{Locked="source add","source reset"}</comment>
+  </data>
+  <data name="ReportIdentityFound" xml:space="preserve">
+    <value>Funnet</value>
+  </data>
+  <data name="VerifyFileFailedIsDirectory" xml:space="preserve">
+    <value>Bane er en katalog:</value>
+  </data>
+  <data name="VerifyFileFailedNotExist" xml:space="preserve">
+    <value>Filen finnes ikke:</value>
+  </data>
+  <data name="BothManifestAndSearchQueryProvided" xml:space="preserve">
+    <value>Det finnes både lokale manifest-og søke streng argumenter</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logger</value>
+    <comment>Diagnostic files containing information about application use.</comment>
+  </data>
+  <data name="InstallerBlockedByPolicy" xml:space="preserve">
+    <value>Installasjonsprogrammet er blokkert av policy</value>
+  </data>
+  <data name="InstallerFailedSecurityCheck" xml:space="preserve">
+    <value>Installasjonsprogrammet passerte ikke sikkerhetskontrollen</value>
+  </data>
+  <data name="InstallerFailedVirusScan" xml:space="preserve">
+    <value>Et antivirus-produkt rapporterer en infeksjon i installasjonsprogrammet</value>
+  </data>
+  <data name="SourceOpenWithFailedUpdate" xml:space="preserve">
+    <value>Feil under forsøk på å oppdatere kilden:</value>
+  </data>
+  <data name="UninstallCommandLongDescription" xml:space="preserve">
+    <value>Avinstallerer den valgte pakken, enten funnet ved å søke i listen installerte pakker eller direkte fra et manifest. Spørringen må som standard skille mellom små og store bokstaver mellom ID, navn eller kalle navn for pakken. Andre felt kan brukes ved å sende riktig alternativ.</value>
+  </data>
+  <data name="UninstallCommandShortDescription" xml:space="preserve">
+    <value>Avinstallerer angitt pakke</value>
+  </data>
+  <data name="UninstallFlowStartingPackageUninstall" xml:space="preserve">
+    <value>Starter avinstallasjon av pakke...</value>
+  </data>
+  <data name="UninstallFlowUninstallSuccess" xml:space="preserve">
+    <value>Avinstallasjon vellykket</value>
+  </data>
+  <data name="NoUninstallInfoFound" xml:space="preserve">
+    <value>winget ikke finne Avinstaller-kommandoen for denne pakken. Ta kontakt med Package-utgiveren for å få hjelp.</value>
+    <comment>{Locked="winget"}</comment>
+  </data>
+  <data name="UninstallAbandoned" xml:space="preserve">
+    <value>Avinstallasjonen er avbrutt</value>
+  </data>
+  <data name="UninstallFailedWithCode" xml:space="preserve">
+    <value>Avinstallasjon mislyktes med avslutningskode:</value>
+  </data>
+  <data name="ExportCommandShortDescription" xml:space="preserve">
+    <value>Eksporterer en liste over installerte pakker</value>
+  </data>
+  <data name="ImportCommandLongDescription" xml:space="preserve">
+    <value>Installerer alle pakkene som er oppført i en fil.</value>
+  </data>
+  <data name="ImportCommandShortDescription" xml:space="preserve">
+    <value>Installerer alle pakkene i en fil</value>
+  </data>
+  <data name="OutputFileArgumentDescription" xml:space="preserve">
+    <value>Fil der resultatet skal skrives</value>
+  </data>
+  <data name="ImportFileArgumentDescription" xml:space="preserve">
+    <value>Fil som beskriver pakkene som skal installeres</value>
+  </data>
+  <data name="ExportSourceArgumentDescription" xml:space="preserve">
+    <value>Eksporter pakker fra den angitte kilden</value>
+  </data>
+  <data name="ExportCommandLongDescription" xml:space="preserve">
+    <value>Skriver en liste over de installerte pakkene til en fil. Pakkene kan installeres med kommandoen import.</value>
+    <comment>{Locked="import"}</comment>
+  </data>
+  <data name="ImportInstallFailed" xml:space="preserve">
+    <value>Kan ikke installere en eller flere av de importerte pakkene</value>
+  </data>
+  <data name="ImportSearchFailed" xml:space="preserve">
+    <value>Finner ikke pakken for import:</value>
+  </data>
+  <data name="ImportSourceNotInstalled" xml:space="preserve">
+    <value>Kilden som kreves for import er ikke installert:</value>
+  </data>
+  <data name="InstalledPackageNotAvailable" xml:space="preserve">
+    <value>Installert pakke er ikke tilgjengelig fra noen kilde:</value>
+  </data>
+  <data name="InstalledPackageVersionNotAvailable" xml:space="preserve">
+    <value>Installert versjon av pakken er ikke tilgjengelig fra noen kilde:</value>
+  </data>
+  <data name="NoPackagesInImportFile" xml:space="preserve">
+    <value>Finner ingen pakker i importfilen</value>
+  </data>
+  <data name="InvalidJsonFile" xml:space="preserve">
+    <value>JSON-filen er ikke gyldig</value>
+  </data>
+  <data name="ImportPackageAlreadyInstalled" xml:space="preserve">
+    <value>Pakken er allerede installert:</value>
+  </data>
+  <data name="ImportIgnoreUnavailableArgumentDescription" xml:space="preserve">
+    <value>Ignorer utilgjengelige pakker</value>
+  </data>
+  <data name="ExportIncludeVersionsArgumentDescription" xml:space="preserve">
+    <value>Inkluder pakkeversjoner i produsert fil</value>
+  </data>
+  <data name="ImportIgnoreVersionsArgumentDescription" xml:space="preserve">
+    <value>Ignorerer pakkeversjoner fra importfil</value>
+  </data>
+  <data name="VerifyPathFailedNotExist" xml:space="preserve">
+    <value>Banen finnes ikke:</value>
+  </data>
+  <data name="ImportFileHasInvalidSchema" xml:space="preserve">
+    <value>JSON-filen angir ikke et godkjent skjema.</value>
+  </data>
+  <data name="InstallScopeDescription" xml:space="preserve">
+    <value>Velg installasjonsområde (bruker eller maskin)</value>
+    <comment>This argument allows the user to select between installing for just the user or for the entire machine.</comment>
+  </data>
+  <data name="InvalidArgumentValueError" xml:space="preserve">
+    <value>Verdien som er angitt for argumentet "%1", er ugyldig. Gyldige verdier er</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
+  </data>
+  <data name="DisabledByGroupPolicy" xml:space="preserve">
+    <value>Denne operasjonen er deaktivert av gruppepolicy</value>
+  </data>
+  <data name="PolicyAdditionalSources" xml:space="preserve">
+    <value>Aktiver ekstra kilder for Windows-appinstallasjonsprogram</value>
+  </data>
+  <data name="PolicyAllowedSources" xml:space="preserve">
+    <value>Aktiver tillatte kilder for Windows-appinstallasjonsprogrammet</value>
+  </data>
+  <data name="PolicyEnableDefaultSource" xml:space="preserve">
+    <value>Aktiver standardkilde for Windows-appinstallasjonsprogram</value>
+  </data>
+  <data name="PolicyEnableExperimentalFeatures" xml:space="preserve">
+    <value>Aktiver eksperimentelle funksjoner for Windows-appinstallasjonsprogram</value>
+  </data>
+  <data name="PolicyEnableMSStoreSource" xml:space="preserve">
+    <value>Aktiver Microsoft Store-kilde for Windows-appinstallsjonsprogram</value>
+  </data>
+  <data name="PolicyEnableWinGetSettings" xml:space="preserve">
+    <value>Aktiver innstillinger for pakkebehandling for Windows</value>
+  </data>
+  <data name="PolicyEnableWinGet" xml:space="preserve">
+    <value>Aktiver pakkebehandling for Windows</value>
+  </data>
+  <data name="PolicySourceAutoUpdateInterval" xml:space="preserve">
+    <value>Angi intervall i minutter for automatisk oppdatering av kilde for pakkebehandling for Windows</value>
+  </data>
+  <data name="PoliciesDisabled" xml:space="preserve">
+    <value>Deaktivert</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesEnabled" xml:space="preserve">
+    <value>Aktivert</value>
+    <comment>As in enabled/disabled</comment>
+  </data>
+  <data name="PoliciesPolicy" xml:space="preserve">
+    <value>Gruppepolicy</value>
+    <comment>Header for a table listing active Group Policies</comment>
+  </data>
+  <data name="PoliciesState" xml:space="preserve">
+    <value>Tilstand</value>
+    <comment>Header for a table listing the state (enabled/disabled) of Group Policies</comment>
+  </data>
+  <data name="PolicyEnableLocalManifests" xml:space="preserve">
+    <value>Aktiver lokale manifestfiler for Windows-appinstallasjonsprogram</value>
+  </data>
+  <data name="SettingsWarningField" xml:space="preserve">
+    <value>Felt:</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldFormat" xml:space="preserve">
+    <value>Ugyldig feltformat.</value>
+  </data>
+  <data name="SettingsWarningInvalidFieldValue" xml:space="preserve">
+    <value>Ugyldig feltverdi.</value>
+  </data>
+  <data name="SettingsWarningInvalidValueFromPolicy" xml:space="preserve">
+    <value>Ugyldig innstilling fra gruppepolicy.</value>
+  </data>
+  <data name="SettingsWarningLoadedBackupSettings" xml:space="preserve">
+    <value>Innlastede innstillinger fra sikkerhetskopifil.</value>
+  </data>
+  <data name="SettingsWarningParseError" xml:space="preserve">
+    <value>Feil under analyse av fil:</value>
+  </data>
+  <data name="SettingsWarningValue" xml:space="preserve">
+    <value>Verdi:</value>
+  </data>
+  <data name="FeaturesMessageDisabledByPolicy" xml:space="preserve">
+    <value>Følgende eksperimentelle funksjoner pågår.
+Konfigurasjonen er deaktivert på grunn av gruppe policy.</value>
+  </data>
+  <data name="InstallerHashMismatchError" xml:space="preserve">
+    <value>Hashkode for installasjonsprogram samsvarer ikke.</value>
+  </data>
+  <data name="PolicyEnableHashOverride" xml:space="preserve">
+    <value>Aktiver hashoverstyring for Windows-appinstallasjonsprogram</value>
+  </data>
+  <data name="SourceExportCommandLongDescription" xml:space="preserve">
+    <value>Eksporter gjeldende kilder som JSON for gruppe policy.</value>
+  </data>
+  <data name="SourceExportCommandShortDescription" xml:space="preserve">
+    <value>Eksporter gjeldende kilder</value>
+  </data>
+  <data name="SourceListAdditionalSource" xml:space="preserve">
+    <value>Ekstra kilde</value>
+    <comment>An additional source required by policy.</comment>
+  </data>
+  <data name="SourceListAllowedSource" xml:space="preserve">
+    <value>Tillatt kilde</value>
+    <comment>A source that the user is allowed to add.</comment>
+  </data>
+  <data name="InvalidArgumentValueErrorWithoutValidValues" xml:space="preserve">
+    <value>Verdien som er angitt for argumentet "%1", er ugyldig</value>
+    <comment>{Locked="%1"} The value will be replaced with the argument name</comment>
   </data>
 </root>

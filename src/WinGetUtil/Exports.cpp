@@ -34,6 +34,7 @@ extern "C"
 
         if (!AppInstaller::Logging::Log().ContainsLogger(loggerName))
         {
+            // Let FileLogger use default file prefix
             AppInstaller::Logging::AddFileLogger(pathAsPath);
         }
 
@@ -198,6 +199,36 @@ extern "C"
     }
     CATCH_RETURN()
 
+    WINGET_UTIL_API WinGetValidateManifestV2(
+        WINGET_STRING inputPath,
+        BOOL* succeeded,
+        WINGET_STRING_OUT* message,
+        WINGET_STRING mergedManifestPath,
+        WinGetValidateManifestOption option) try
+    {
+        THROW_HR_IF(E_INVALIDARG, !inputPath);
+        THROW_HR_IF(E_INVALIDARG, !succeeded);
+
+        try
+        {
+            (void)YamlParser::CreateFromPath(inputPath, true, true,
+                mergedManifestPath ? mergedManifestPath : L"",
+                option == WinGetValidateManifestOption::SchemaValidationOnly);
+            *succeeded = TRUE;
+        }
+        catch (const ManifestException& e)
+        {
+            *succeeded = e.IsWarningOnly();
+            if (message)
+            {
+                *message = ::SysAllocString(ConvertToUTF16(e.GetManifestErrorMessage()).c_str());
+            }
+        }
+
+        return S_OK;
+    }
+    CATCH_RETURN()
+
     WINGET_UTIL_API WinGetDownload(
         WINGET_STRING url,
         WINGET_STRING filePath,
@@ -212,7 +243,7 @@ extern "C"
         THROW_HR_IF(E_INVALIDARG, computeHash && sha256HashLength != 32);
 
         AppInstaller::ProgressCallback callback;
-        auto hashValue = Download(ConvertToUTF8(url), filePath, callback, computeHash);
+        auto hashValue = Download(ConvertToUTF8(url), filePath, DownloadType::WinGetUtil, callback, computeHash);
 
         // At this point, if computeHash is set we have verified that the buffer is valid and 32 bytes.
         if (computeHash)
@@ -223,6 +254,23 @@ extern "C"
             THROW_HR_IF(E_UNEXPECTED, hash.size() != sha256HashLength);
             std::copy(hash.begin(), hash.end(), sha256Hash);
         }
+
+        return S_OK;
+    }
+    CATCH_RETURN()
+
+    WINGET_UTIL_API WinGetCompareVersions(
+        WINGET_STRING versionA,
+        WINGET_STRING versionB,
+        INT* comparisonResult) try
+    {
+        THROW_HR_IF(E_INVALIDARG, !versionA);
+        THROW_HR_IF(E_INVALIDARG, !versionB);
+
+        Version vA{ ConvertToUTF8(versionA) };
+        Version vB{ ConvertToUTF8(versionB) };
+
+        *comparisonResult = vA < vB ? -1 : (vA == vB ? 0 : 1);
 
         return S_OK;
     }
